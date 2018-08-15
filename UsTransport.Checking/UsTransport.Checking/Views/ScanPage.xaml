@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UsTransport.Checking.Views.ScanPage"
+             >
+    <ContentPage.Content>
+        <!--<StackLayout>
+            <Label Text="Welcome to Xamarin.Forms a!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" TextColor="Red"/>
+        </StackLayout>-->
+        <Grid ColumnSpacing="0" 
+              RowSpacing="0" 
+              HorizontalOptions="Fill"
+              VerticalOptions="FillAndExpand" 
+              Padding="10">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!--<Label Grid.Row="0" x:Name="LbCode" Text="Code: 12345" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Blue" FontSize="20" />-->
+            <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="Fill" VerticalOptions="Center" BackgroundColor="#e6e6e6" Padding="5,0,0,0">
+                <Entry x:Name="EtInputCode"  Text="" HorizontalOptions="FillAndExpand" VerticalOptions="Center" TextColor="Black"  Placeholder="Nhập mã Code..." PlaceholderColor="#a6a6a6"></Entry>
+                <Button x:Name="BtnClearCode" Text="X" HorizontalOptions="End" VerticalOptions="Center" WidthRequest="35" Clicked="BtnClearCode_OnClicked" ></Button>
+            </StackLayout>
+
+
+            <!--<StackLayout Grid.Row="1" HorizontalOptions="Start" VerticalOptions="StartAndExpand" Padding="10">
+                <Label x:Name="LbError"  Text="Cập nhật thành công" TextColor="Red" IsVisible="False"/>
+                <Label x:Name="LbSuccess" Text="Lỗi: Mã code không hợp lệ" TextColor="Green" IsVisible="False"/>
+
+                <Label x:Name="LbOrderId" Text="Mã đơn hàng: US123" TextColor="Blue"/>
+                <Label x:Name="LbStatusName" Text="Trạng thái hiện tại: đã mua trên amazon" TextColor="Black"/>
+                <Label x:Name="LbTotal" Text="Tổng số lượng sản phẩm: 3" TextColor="Black"/>
+                <ListView x:Name="OrderDetails" HasUnevenRows="True" IsVisible="False">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Grid Padding="10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.40*" />
+                                            <ColumnDefinition Width="0.60*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Source="{Binding ProductImage}" Aspect="AspectFill" HeightRequest="60" WidthRequest="80" />
+
+                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding ProductName}" />
+                                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding Asin, StringFormat='ASIN: {0}'}" />
+                                        <Label Grid.Row="2" Grid.Column="1" Text="{Binding Quantity, StringFormat='Số lượng: {0}'}" />
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>-->
+
+
+            <StackLayout HorizontalOptions="Fill" VerticalOptions="EndAndExpand" Padding="5" Grid.Row="2" >
+                <Grid x:Name="BtnNhanHang"  IsVisible="False">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition Width="5*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" HorizontalOptions="Fill" Text="CANCEL" Style="{DynamicResource UpdateButtonStyle}"/>
+                    <Button Grid.Column="1" HorizontalOptions="Fill" Text="PICKUP" Style="{DynamicResource UpdateButtonStyle}"/>
+                </Grid>
+
+                <Grid x:Name="BtnKhoHang" IsVisible="False">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition Width="5*" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Button Grid.Row="0" Grid.Column="0" HorizontalOptions="Fill" Text="WRONG ITEMS" Style="{DynamicResource UpdateButtonStyle}"/>
+                    <Button Grid.Row="0" Grid.Column="1" HorizontalOptions="Fill" Text="SENT TO VN" Style="{DynamicResource UpdateButtonStyle}"/>
+                    <Button Grid.Row="1" Grid.Column="0" HorizontalOptions="Fill" Text="PROHIBITED ITEMS" Style="{DynamicResource UpdateButtonStyle}"/>
+                    <Button Grid.Row="1" Grid.Column="1" HorizontalOptions="Fill" Text="REJECTED" Style="{DynamicResource UpdateButtonStyle}"/>
+                </Grid>
+
+                <Grid x:Name="BtnVietNam" IsVisible="False">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition Width="5*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Fill" Text="TỐT" Style="{DynamicResource UpdateButtonStyle}"/>
+                    <Button Grid.Row="1" Grid.Column="0" HorizontalOptions="Fill" Text="BAO BÌ HƯ HỎNG" Style="{DynamicResource UpdateButtonStyle}"/>
+                    <Button Grid.Row="1" Grid.Column="1" HorizontalOptions="Fill" Text="MẤT HÀNG" Style="{DynamicResource UpdateButtonStyle}"/>
+                </Grid>
+
+                <Button x:Name="BtnScan"
+                    Style="{DynamicResource PrimaryActionButtonStyle}"
+                    VerticalOptions="End"
+                    Text="SCAN" Clicked="BtnScan_OnClicked"/>
+            </StackLayout>
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

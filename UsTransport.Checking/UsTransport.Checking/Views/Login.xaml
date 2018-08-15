@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UsTransport.Checking.Views.Login"
+             BackgroundImage="{ StaticResource SignUpBackgroundImage }">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid
+                ColumnSpacing="0" 
+                RowSpacing="0" 
+                HorizontalOptions="Fill"
+                VerticalOptions="FillAndExpand" >
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="100" />
+                </Grid.RowDefinitions>
+
+                <!-- LOGO -->
+                <Grid Grid.Row="0" ColumnSpacing="10" Padding="0" Style="{ StaticResource BrandContainerStyle }">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" HeightRequest="64" WidthRequest="250" Source="logo.png" />
+                </Grid>
+
+                <Picker Margin="0,20,0,0" Grid.Row="1" x:Name="pickerEnv" WidthRequest="300"  TextColor="White" SelectedIndex="0" HorizontalOptions="Center" VerticalOptions="Center"></Picker>
+
+                <!---FIELDS CONTAINER-->
+                <Grid 
+                    Padding="40, 0"
+                    ColumnSpacing="0" 
+                    RowSpacing="0" 
+                    VerticalOptions="CenterAndExpand"
+                    Grid.Row="2"
+                    HeightRequest="160">
+
+                    <StackLayout
+                        Grid.Row="0"
+                        VerticalOptions="StartAndExpand" >
+
+                        <Label x:Name="LbError"
+                            HorizontalOptions="Fill" FontSize="20" IsVisible="False"
+                            Text="Please enter a valid e-mail "
+                            Style="{DynamicResource ValidationEntryErrorStyle}"
+                        />
+
+                        <!---EMAIL FIELD-->
+                        <Entry x:Name="LbUsername"
+                            Placeholder="Username" TextColor="White"
+                            Style="{DynamicResource ArtinaLoginEntryStyle}" />
+
+                        <Label
+                            HorizontalOptions="Start"
+                            Text="Please enter a valid e-mail " IsVisible="false"
+                            Style="{DynamicResource ValidationEntryErrorStyle}"
+                        />
+
+                    </StackLayout>
+
+                    <!---PASSWORD FIELD-->
+                    <Entry 
+                        Grid.Row="2"
+                        x:Name="LbPassword"
+                        Placeholder="Password"
+                        IsPassword="true" TextColor="White"
+                        Style="{DynamicResource ArtinaLoginEntryStyle}" 
+                        VerticalOptions="StartAndExpand" />
+
+                </Grid>
+
+
+                <!-- FOOTER -->
+                <StackLayout 
+                    HorizontalOptions="Fill"
+                    VerticalOptions="EndAndExpand" 
+                    Padding="20"
+                    Grid.Row="3" >
+
+                    <Button x:Name="BtnLogin"
+                        Style="{DynamicResource PrimaryActionButtonStyle}"
+                        VerticalOptions="End"
+                        Text="Login" />
+                </StackLayout>
+
+            </Grid>
+
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
