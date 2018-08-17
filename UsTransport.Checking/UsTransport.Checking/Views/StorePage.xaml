@@ -3,8 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="UsTransport.Checking.Views.StorePage" 
              Title="Danh sách đại lý">
-    <StackLayout>
-        <ListView x:Name="StoresListView" 
+    <ContentPage.Content>
+        <StackLayout>
+            <!--<ListView x:Name="ItemsListView" 
+                      ItemsSource="{Binding Items}"
+                      VerticalOptions="FillAndExpand"
+                      HasUnevenRows="true"
+                      RefreshCommand="{Binding LoadItemsCommand}"
+                      IsPullToRefreshEnabled="true"
+                      IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                      CachingStrategy="RecycleElement">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Text}" 
+                                       LineBreakMode="NoWrap" 
+                                       Style="{DynamicResource ListItemTextStyle}" 
+                                       FontSize="16" />
+                                <Label Text="{Binding Description}" 
+                                       LineBreakMode="NoWrap"
+                                       Style="{DynamicResource ListItemDetailTextStyle}"
+                                       FontSize="13" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+            <ListView x:Name="StoresListView" 
                   ItemsSource="{Binding Stores}"
                   VerticalOptions="FillAndExpand"
                   HasUnevenRows="true"
@@ -13,22 +39,23 @@
                   IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                   CachingStrategy="RecycleElement"
                   >
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Padding="10">
-                            <Label Text="{Binding StoreName}" 
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding StoreName}" 
                                    LineBreakMode="NoWrap" 
                                    Style="{DynamicResource ListItemTextStyle}" 
                                    FontSize="16" />
-                            <Label Text="{Binding FullName}" 
+                                <Label Text="{Binding FullName}" 
                                    LineBreakMode="NoWrap"
                                    Style="{DynamicResource ListItemDetailTextStyle}"
                                    FontSize="13" />
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

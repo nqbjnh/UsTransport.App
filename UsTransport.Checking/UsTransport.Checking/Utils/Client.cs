@@ -4,6 +4,8 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using UsTransport.Checking.Models;
 
 namespace UsTransport.Checking.Utils
 {
@@ -79,13 +81,14 @@ namespace UsTransport.Checking.Utils
                     httpClient.DefaultRequestHeaders.Accept.Clear();
                     httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     var content = new StringContent(JsonContent, Encoding.UTF8, "application/json");
-                    var response = await httpClient.PostAsync(ApiUrl, content);
+                    var response = httpClient.PostAsync(ApiUrl, content).ConfigureAwait(false).GetAwaiter().GetResult();
                     var responseContent = await response.Content.ReadAsStringAsync();
                     if (response.StatusCode != HttpStatusCode.OK)
                     {
                         throw new Exception(responseContent);
                     }
-                    return await Task.FromResult(responseContent.JsonToObject<T>());
+                  
+                    return responseContent.JsonToObject<T>();
                     
                 }
             }

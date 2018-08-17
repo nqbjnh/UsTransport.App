@@ -13,7 +13,7 @@ namespace UsTransport.Checking.Services
         {
             try
             {
-                var result = Client.Get<JObject>("https://gist.githubusercontent.com/nqbjnh/a584716cc54e2449f34163a8140d4c7b/raw/a8481f5bf9145df576f5196ae9fac2ab383ea374/UsTransport.App.Checking.config");
+                var result = Client.Get<JObject>("https://gist.githubusercontent.com/nqbjnh/a584716cc54e2449f34163a8140d4c7b/raw/UsTransport.App.Checking.config");
                 return new AppConfig(result);
             }
             catch (Exception ex)

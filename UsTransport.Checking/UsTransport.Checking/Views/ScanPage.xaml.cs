@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using UsTransport.Checking.Models;
+using UsTransport.Checking.Utils;
+using UsTransport.Checking.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using ZXing.Net.Mobile.Forms;
@@ -15,10 +17,13 @@ namespace UsTransport.Checking.Views
 	{
 	    ZXingScannerPage scanPage;
 	    private Grid GroupButton;
+	    private ScanPageViewModel _scanPageViewModel;
+	    private Order _order;
         public ScanPage ()
 		{
 			InitializeComponent ();
-		    
+		    BindingContext = _scanPageViewModel = new ScanPageViewModel();
+
 		}
 
 	    protected override void OnAppearing()
@@ -53,7 +58,7 @@ namespace UsTransport.Checking.Views
         {
             GroupButton.IsVisible = true;
             //call api check code
-            /*var result = App.API._OrderOperation.GetProductByCode(Code);
+            var result = _scanPageViewModel.GetOrderByCode(Code);
             if (result == null)
             {
                 LbError.Text = "Có lỗi xảy ra, vui lòng thử lại sau!";
@@ -63,28 +68,28 @@ namespace UsTransport.Checking.Views
 
             if (result.Code == 0)
             {
-                _Order = JsonConvert.DeserializeObject<Order>(result.Data.ToString());
+                _order = result.Data.ToJson().JsonToObject<Order>();
                 EtInputCode.Text = string.Empty;
                 EtInputCode.Text = string.Empty;
-                LbOrderId.Text = "Mã đơn hàng: US" + _Order.OrderId;
-                LbStatusName.Text = "Trạng thái đơn hàng: " + _Order.StatusName;
+                LbOrderCode.Text = "Mã đơn hàng: " + _order.Code;
+                /*LbStatusName.Text = "Trạng thái đơn hàng: " + _Order.StatusName;
                 LbTotal.Text = "Số lượng sản phẩm: " + _Order.OrderDetails.Count;
-                OrderDetails.ItemsSource = _Order.OrderDetails;
+                OrderDetails.ItemsSource = _Order.OrderDetails;*/
 
                 //show control
-                LbOrderId.IsVisible = true;
-                LbOrderId.IsVisible = true;
+                LbOrderCode.IsVisible = true;
+               /* LbOrderId.IsVisible = true;
                 LbStatusName.IsVisible = true;
                 LbTotal.IsVisible = true;
                 OrderDetails.IsVisible = true;
                 //BtnUpdate.IsVisible = true;
-                SlBtnUpdateStatus.IsVisible = true;
+                SlBtnUpdateStatus.IsVisible = true;*/
             }
             else
             {
                 LbError.Text = result.Message + ": " + result.Data;
                 LbError.IsVisible = true;
-            }*/
+            }
 
 
         }
@@ -114,10 +119,40 @@ namespace UsTransport.Checking.Views
             }
             else//check nếu nhập code bằng tay
             {
-                //GetProductByCode(EtInputCode.Text);
+                GetProductByCode(EtInputCode.Text);
             }
 
 
         }
-    }
+
+	    private void UpdateOrderStatus_OnClicked(object sender, EventArgs e)
+	    {
+	        LbSuccess.IsVisible = false;
+	        LbError.IsVisible = false;
+
+	        var btn = (Button)sender;
+	        var orderStatus = int.Parse(btn.ClassId);
+	        var orderCode = _order.Code;
+	        var result = _scanPageViewModel.UpdateOrderStatus(orderCode, orderStatus);
+	        if (result == null)
+	        {
+	            LbError.Text = "Có lỗi xảy ra, vui lòng thử lại sau!";
+	            LbError.IsVisible = true;
+	            return;
+	        }
+
+	        if (result.Code == 0)
+	        {
+	            LbSuccess.Text = result.Data?.ToString();
+	            LbSuccess.IsVisible = true;
+	            //BtnUpdate.IsVisible = false;
+
+	        }
+	        else
+	        {
+	            LbError.Text = "Lỗi: " + result.Data;
+	            LbError.IsVisible = true;
+	        }
+        }
+	}
 }
