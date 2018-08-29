@@ -29,37 +29,50 @@
 
 
             <StackLayout Grid.Row="1" HorizontalOptions="Start" VerticalOptions="StartAndExpand" Padding="10">
-                <Label x:Name="LbError"  Text="Cập nhật thành công" TextColor="Red" IsVisible="False"/>
-                <Label x:Name="LbSuccess" Text="Lỗi: Mã code không hợp lệ" TextColor="Green" IsVisible="False"/>
+                <Label x:Name="LbError" TextColor="Red" IsVisible="False"/>
+                <Label x:Name="LbSuccess" TextColor="Green" IsVisible="False"/>
+                
+                <StackLayout x:Name="SlInfo" IsVisible="False">
+                    <Label x:Name="LbStoreName"  TextColor="Blue"/>
+                    <Label x:Name="LbOrderCode" />
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Trạng thái: " />
+                        <Label x:Name="LbStatusName"/>
+                    </StackLayout>
+                    
+                    <Label x:Name="LbTotalItem"  />
+                    <Label  Text="Danh sách item" TextColor="Blue"/>
+                    <ListView x:Name="LvItems" HasUnevenRows="True" Margin="10,0,0,0">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout>
+                                        <Label Text="{Binding CategoryName}" 
+                                           LineBreakMode="NoWrap" 
+                                           Style="{DynamicResource ListItemTextStyle}" 
+                                           FontSize="16" />
+                                        <StackLayout Orientation="Horizontal">
 
-                <Label x:Name="LbOrderCode" Text="{Binding Order.Code}" TextColor="Blue"/>
-                <!--<ListView x:Name="OrderDetails" HasUnevenRows="True" IsVisible="False">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout>
-                                    <Grid Padding="10">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto" />
-                                            <RowDefinition Height="Auto" />
-                                            <RowDefinition Height="Auto" />
-                                        </Grid.RowDefinitions>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="0.40*" />
-                                            <ColumnDefinition Width="0.60*" />
-                                        </Grid.ColumnDefinitions>
-                                        <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Source="{Binding ProductImage}" Aspect="AspectFill" HeightRequest="60" WidthRequest="80" />
+                                            <Label Text="{Binding Quantity,StringFormat='Quantity: {0}'}" 
+                                               LineBreakMode="NoWrap"
+                                               Style="{DynamicResource ListItemDetailTextStyle}"
+                                               FontSize="13" />
+                                            <Label Text="{Binding Value,StringFormat='Value: {0}'}" 
+                                               LineBreakMode="NoWrap"
+                                               Style="{DynamicResource ListItemDetailTextStyle}"
+                                               FontSize="13" />
+                                            <Label Text="{Binding Unit,StringFormat='Unit: {0}'}" 
+                                               LineBreakMode="NoWrap"
+                                               Style="{DynamicResource ListItemDetailTextStyle}"
+                                               FontSize="13" />
+                                        </StackLayout>
 
-                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding ProductName}" />
-                                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding Asin, StringFormat='ASIN: {0}'}" />
-                                        <Label Grid.Row="2" Grid.Column="1" Text="{Binding Quantity, StringFormat='Số lượng: {0}'}" />
-                                    </Grid>
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>-->
-
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
             </StackLayout>
 
 
@@ -69,7 +82,7 @@
                         <ColumnDefinition Width="5*" />
                         <ColumnDefinition Width="5*" />
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" HorizontalOptions="Fill" Text="CANCEL" Clicked="UpdateOrderStatus_OnClicked" Style="{DynamicResource UpdateButtonStyle}" ClassId="0"/>
+                    <Button Grid.Column="0" HorizontalOptions="Fill" Text="CANCEL" Clicked="UpdateOrderStatus_OnClicked" Style="{DynamicResource UpdateButtonStyle}" ClassId="6" BackgroundColor="Red"/>
                     <Button Grid.Column="1" HorizontalOptions="Fill" Text="PICKUP" Clicked="UpdateOrderStatus_OnClicked" Style="{DynamicResource UpdateButtonStyle}" ClassId="1"/>
                 </Grid>
 
@@ -82,11 +95,11 @@
                         <ColumnDefinition Width="5*" />
                         <ColumnDefinition Width="5*" />
                     </Grid.ColumnDefinitions>
-                    
-                    <Button Grid.Row="0" Grid.Column="0" HorizontalOptions="Fill" Text="WRONG ITEMS" Clicked="UpdateOrderStatus_OnClicked" Style="{DynamicResource UpdateButtonStyle}" ClassId="2"/>
-                    <Button Grid.Row="0" Grid.Column="1" HorizontalOptions="Fill" Text="SENT TO VN" Clicked="UpdateOrderStatus_OnClicked" Style="{DynamicResource UpdateButtonStyle}" ClassId="3"/>
-                    <Button Grid.Row="1" Grid.Column="0" HorizontalOptions="Fill" Text="PROHIBITED ITEMS" Clicked="UpdateOrderStatus_OnClicked" Style="{DynamicResource UpdateButtonStyle}" ClassId="4"/>
-                    <Button Grid.Row="1" Grid.Column="1" HorizontalOptions="Fill" Text="REJECTED" Clicked="UpdateOrderStatus_OnClicked" Style="{DynamicResource UpdateButtonStyle}" ClassId="5"/>
+
+                    <Button Grid.Row="0" Grid.Column="0" HorizontalOptions="Fill" Text="WRONG ITEMS" Clicked="UpdateOrderStatus_OnClicked" Style="{DynamicResource UpdateButtonStyle}" ClassId="7"  BackgroundColor="Orange"/>
+                    <Button Grid.Row="0" Grid.Column="1" HorizontalOptions="Fill" Text="SHIP TO VN" Clicked="UpdateOrderStatus_OnClicked" Style="{DynamicResource UpdateButtonStyle}" ClassId="2"/>
+                    <Button Grid.Row="1" Grid.Column="0" HorizontalOptions="Fill" Text="PROHIBITED ITEMS" Clicked="UpdateOrderStatus_OnClicked" Style="{DynamicResource UpdateButtonStyle}" ClassId="8"  BackgroundColor="Red"/>
+                    <Button Grid.Row="1" Grid.Column="1" HorizontalOptions="Fill" Text="REJECTED" Clicked="UpdateOrderStatus_OnClicked" Style="{DynamicResource UpdateButtonStyle}" ClassId="9"  BackgroundColor="Red"/>
                 </Grid>
 
                 <Grid x:Name="BtnVietNam" IsVisible="False">
@@ -99,9 +112,9 @@
                         <ColumnDefinition Width="5*" />
                     </Grid.ColumnDefinitions>
 
-                    <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Fill" Text="TỐT" Clicked="UpdateOrderStatus_OnClicked" Style="{DynamicResource UpdateButtonStyle}" ClassId="6"/>
-                    <Button Grid.Row="1" Grid.Column="0" HorizontalOptions="Fill" Text="BAO BÌ HƯ HỎNG" Clicked="UpdateOrderStatus_OnClicked" Style="{DynamicResource UpdateButtonStyle}" ClassId="7"/>
-                    <Button Grid.Row="1" Grid.Column="1" HorizontalOptions="Fill" Text="MẤT HÀNG" Clicked="UpdateOrderStatus_OnClicked" Style="{DynamicResource UpdateButtonStyle}" ClassId="8"/>
+                    <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Fill" Text="TỐT" Clicked="UpdateOrderStatus_OnClicked" Style="{DynamicResource UpdateButtonStyle}" ClassId="10"/>
+                    <Button Grid.Row="1" Grid.Column="0" HorizontalOptions="Fill" Text="BAO BÌ HƯ HỎNG" Clicked="UpdateOrderStatus_OnClicked" Style="{DynamicResource UpdateButtonStyle}" ClassId="11"  BackgroundColor="Orange"/>
+                    <Button Grid.Row="1" Grid.Column="1" HorizontalOptions="Fill" Text="MẤT HÀNG" Clicked="UpdateOrderStatus_OnClicked" Style="{DynamicResource UpdateButtonStyle}" ClassId="12"  BackgroundColor="Red"/>
                 </Grid>
 
                 <Button x:Name="BtnScan"

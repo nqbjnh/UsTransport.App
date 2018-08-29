@@ -25,7 +25,11 @@ namespace UsTransport.Checking.Views
 
             var page = (Page)Activator.CreateInstance(item.TargetType);
             page.Title = item.Title;
-            page.BindingContext = item;
+            if (item.TargetType == typeof(ScanPage))
+            {
+                page.BindingContext = item;
+            }
+           
             Detail = new NavigationPage(page);
             IsPresented = false;
 

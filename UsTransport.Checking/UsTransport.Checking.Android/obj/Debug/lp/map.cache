@@ -1,5 +1,6 @@
 FastAndroidCamera
 FormsViewGroup
+Newtonsoft.Json
 System.Runtime
 UsTransport.Checking
 Xamarin.Android.Arch.Core.Common
@@ -31,4 +32,3 @@ ZXing.Net.Mobile.Forms
 zxing.portable
 ZXingNetMobile
 netstandard
-Newtonsoft.Json

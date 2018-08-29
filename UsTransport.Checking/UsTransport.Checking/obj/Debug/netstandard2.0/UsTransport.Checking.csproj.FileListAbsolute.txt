@@ -1,7 +1,6 @@
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking\bin\Debug\netstandard2.0\UsTransport.Checking.deps.json
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking\bin\Debug\netstandard2.0\UsTransport.Checking.dll
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking\bin\Debug\netstandard2.0\UsTransport.Checking.pdb
-G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking\obj\Debug\netstandard2.0\UsTransport.Checking.csprojAssemblyReference.cache
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking\obj\Debug\netstandard2.0\App.xaml.g.cs
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking\obj\Debug\netstandard2.0\Views\ItemDetailPage.xaml.g.cs
@@ -16,6 +15,7 @@ G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking\
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking\obj\Debug\netstandard2.0\UsTransport.Checking.csproj.CoreCompileInputs.cache
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking\obj\Debug\netstandard2.0\UsTransport.Checking.AssemblyInfoInputs.cache
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking\obj\Debug\netstandard2.0\UsTransport.Checking.AssemblyInfo.cs
+G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking\obj\Debug\netstandard2.0\XamlC.stamp
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking\obj\Debug\netstandard2.0\UsTransport.Checking.dll
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking\obj\Debug\netstandard2.0\UsTransport.Checking.pdb
-G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking\obj\Debug\netstandard2.0\XamlC.stamp
+G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking\obj\Debug\netstandard2.0\UsTransport.Checking.csprojAssemblyReference.cache

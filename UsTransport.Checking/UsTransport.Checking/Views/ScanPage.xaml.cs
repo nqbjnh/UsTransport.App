@@ -12,51 +12,51 @@ using ZXing.Net.Mobile.Forms;
 
 namespace UsTransport.Checking.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ScanPage : ContentPage
-	{
-	    ZXingScannerPage scanPage;
-	    private Grid GroupButton;
-	    private ScanPageViewModel _scanPageViewModel;
-	    private Order _order;
-        public ScanPage ()
-		{
-			InitializeComponent ();
-		    BindingContext = _scanPageViewModel = new ScanPageViewModel();
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ScanPage : ContentPage
+    {
+        ZXingScannerPage scanPage;
+        private Grid GroupButton;
+        private ScanPageViewModel _scanPageViewModel;
+        private PackageViewDTO _order;
+        public ScanPage()
+        {
+            InitializeComponent();
+            _scanPageViewModel = new ScanPageViewModel();
 
-		}
-
-	    protected override void OnAppearing()
-	    {
-	        var menuItem = BindingContext as MainPageMenuItem;
-	        switch (menuItem.Id)
-	        {
-	            case 1:
-                    //BtnNhanHang.IsVisible = true;
-	                GroupButton = BtnNhanHang;
-
-                    break;
-	            case 2:
-                    //BtnKhoHang.IsVisible = true;
-	                GroupButton = BtnKhoHang;
-
-                    break;
-	            case 3:
-                    //BtnVietNam.IsVisible = true;
-	                GroupButton = BtnVietNam;
-
-                    break;
-	        }
         }
 
-	    private void BtnClearCode_OnClicked(object sender, EventArgs e)
-	    {
-	        EtInputCode.Text = string.Empty;
-	    }
+        protected override void OnAppearing()
+        {
+            var menuItem = BindingContext as MainPageMenuItem;
+            switch (menuItem.Id)
+            {
+                case 1:
+                    //BtnNhanHang.IsVisible = true;
+                    GroupButton = BtnNhanHang;
+
+                    break;
+                case 2:
+                    //BtnKhoHang.IsVisible = true;
+                    GroupButton = BtnKhoHang;
+
+                    break;
+                case 3:
+                    //BtnVietNam.IsVisible = true;
+                    GroupButton = BtnVietNam;
+
+                    break;
+            }
+        }
+
+        private void BtnClearCode_OnClicked(object sender, EventArgs e)
+        {
+            EtInputCode.Text = string.Empty;
+        }
 
         private void GetProductByCode(string Code)
         {
-            GroupButton.IsVisible = true;
+            
             //call api check code
             var result = _scanPageViewModel.GetOrderByCode(Code);
             if (result == null)
@@ -68,22 +68,22 @@ namespace UsTransport.Checking.Views
 
             if (result.Code == 0)
             {
-                _order = result.Data.ToJson().JsonToObject<Order>();
+                
+                _order = result.Data.ToJson().JsonToObject<PackageViewDTO>();
                 EtInputCode.Text = string.Empty;
                 EtInputCode.Text = string.Empty;
-                LbOrderCode.Text = "Mã đơn hàng: " + _order.Code;
-                /*LbStatusName.Text = "Trạng thái đơn hàng: " + _Order.StatusName;
-                LbTotal.Text = "Số lượng sản phẩm: " + _Order.OrderDetails.Count;
-                OrderDetails.ItemsSource = _Order.OrderDetails;*/
 
-                //show control
-                LbOrderCode.IsVisible = true;
-               /* LbOrderId.IsVisible = true;
-                LbStatusName.IsVisible = true;
-                LbTotal.IsVisible = true;
-                OrderDetails.IsVisible = true;
-                //BtnUpdate.IsVisible = true;
-                SlBtnUpdateStatus.IsVisible = true;*/
+
+                LbStoreName.Text = "Đại lý:"+_order.StoreName;
+                LbOrderCode.Text = "Mã gói hàng:" + _order.Code;
+                LbStatusName.Text = _order.StatusName;
+                LbStatusName.BackgroundColor =
+                    Color.FromHex("#" + (_order.StatusName.GetHashCode() & 0x00FFFFFF).ToString("X6"));
+                LbTotalItem.Text = "Tổng số item:" + _order.TotalItems;
+                LvItems.ItemsSource = _order.Items;
+
+                SlInfo.IsVisible = true;
+                GroupButton.IsVisible = true;
             }
             else
             {
@@ -96,8 +96,7 @@ namespace UsTransport.Checking.Views
 
         private async void BtnScan_OnClicked(object sender, EventArgs e)
         {
-
-           
+            ClearControl();
             //check nếu nhập code bằng camera
             if (string.IsNullOrEmpty(EtInputCode.Text))
             {
@@ -125,34 +124,42 @@ namespace UsTransport.Checking.Views
 
         }
 
-	    private void UpdateOrderStatus_OnClicked(object sender, EventArgs e)
-	    {
-	        LbSuccess.IsVisible = false;
-	        LbError.IsVisible = false;
+        private void UpdateOrderStatus_OnClicked(object sender, EventArgs e)
+        {
+            LbSuccess.IsVisible = false;
+            LbError.IsVisible = false;
 
-	        var btn = (Button)sender;
-	        var orderStatus = int.Parse(btn.ClassId);
-	        var orderCode = _order.Code;
-	        var result = _scanPageViewModel.UpdateOrderStatus(orderCode, orderStatus);
-	        if (result == null)
-	        {
-	            LbError.Text = "Có lỗi xảy ra, vui lòng thử lại sau!";
-	            LbError.IsVisible = true;
-	            return;
-	        }
+            var btn = (Button)sender;
+            var orderStatus = int.Parse(btn.ClassId);
+            
+            var result = _scanPageViewModel.UpdateOrderStatus((int)_order.Id,_order.StatusId, orderStatus);
+            if (result == null)
+            {
+                LbError.Text = "Có lỗi xảy ra, vui lòng thử lại sau!";
+                LbError.IsVisible = true;
+                return;
+            }
 
-	        if (result.Code == 0)
-	        {
-	            LbSuccess.Text = result.Data?.ToString();
-	            LbSuccess.IsVisible = true;
-	            //BtnUpdate.IsVisible = false;
+            if (result.Code == 0)
+            {
+                LbSuccess.Text = result.Message + ": " + result.Data;
+                LbSuccess.IsVisible = true;
+                GroupButton.IsVisible = false;
 
-	        }
-	        else
-	        {
-	            LbError.Text = "Lỗi: " + result.Data;
-	            LbError.IsVisible = true;
-	        }
+            }
+            else
+            {
+                LbError.Text = result.Message + ": " + result.Data;
+                LbError.IsVisible = true;
+            }
         }
-	}
+
+        public void ClearControl()
+        {
+            LbSuccess.IsVisible = false;
+            LbError.IsVisible = false;
+            SlInfo.IsVisible = false;
+            GroupButton.IsVisible = false;
+        }
+    }
 }

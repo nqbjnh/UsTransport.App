@@ -25,7 +25,7 @@
           <Label
               Grid.Column="1"
               Grid.Row="2"
-              Text="UsTransport.Checking"
+              Text="UsExpress"
               Style="{DynamicResource SubtitleStyle}"/>
         </Grid>
       </ListView.Header>

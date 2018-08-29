@@ -45,12 +45,12 @@ namespace UsTransport.Checking.ViewModels
             }
         }
 
-        public Response UpdateOrderStatus(string OrderCode,int Status)
+        public Response UpdateOrderStatus(int PackageId, int CurrentStatus, int UpdateStatus)
         {
 
             try
             {
-                return _IStoreService.UpdateOrderStatus(OrderCode, Status).Result;
+                return _IStoreService.UpdateOrderStatus( PackageId,  CurrentStatus,  UpdateStatus).Result;
 
             }
             catch (Exception ex)

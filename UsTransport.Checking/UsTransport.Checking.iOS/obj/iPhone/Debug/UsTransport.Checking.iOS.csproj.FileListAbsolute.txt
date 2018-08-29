@@ -70,3 +70,5 @@ G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.iOS\bin\iPhone\Debug\zxing.portable.dll
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.iOS\bin\iPhone\Debug\ZXing.Net.Mobile.Forms.dll
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.iOS\bin\iPhone\Debug\ZXing.Net.Mobile.Forms.iOS.dll
+G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.iOS\bin\iPhone\Debug\Newtonsoft.Json.dll
+G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.iOS\bin\iPhone\Debug\System.Net.Http.dll

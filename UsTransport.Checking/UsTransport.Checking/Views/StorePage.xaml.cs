@@ -20,16 +20,7 @@ namespace UsTransport.Checking.Views
         {
             InitializeComponent();
             BindingContext = _storePageViewModel = new StorePageViewModel();
-            /*Items = new ObservableCollection<string>
-            {
-                "Item 1",
-                "Item 2",
-                "Item 3",
-                "Item 4",
-                "Item 5"
-            };
-			
-			MyListView.ItemsSource = Items;*/
+
         }
 
         /* async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -63,9 +54,23 @@ namespace UsTransport.Checking.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
             if (_storePageViewModel.Stores.Count == 0)
                 _storePageViewModel.LoadStoresCommand.Execute(null);
+        }
+
+
+
+        private void SearchBar_OnSearchButtonPressed(object sender, EventArgs e)
+        {
+            try
+            {
+                var searchBar = sender as SearchBar;
+                _storePageViewModel.Search(searchBar.Text.Trim());
+            }
+            catch (Exception)
+            {
+                
+            }
         }
     }
 }
