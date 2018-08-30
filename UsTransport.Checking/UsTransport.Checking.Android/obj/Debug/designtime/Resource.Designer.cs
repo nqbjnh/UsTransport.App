@@ -24,17 +24,6 @@ namespace UsTransport.Checking.Droid
 			global::Android.Runtime.ResourceIdManager.UpdateIdValues();
 		}
 		
-		public static void UpdateIdValues()
-		{
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::UsTransport.Checking.Droid.Resource.Attribute.actionBarSize;
-			global::ZXing.Net.Mobile.Forms.Android.Resource.Layout.zxingscanneractivitylayout = global::UsTransport.Checking.Droid.Resource.Layout.zxingscanneractivitylayout;
-			global::ZXing.Net.Mobile.Forms.Android.Resource.Layout.zxingscannerfragmentlayout = global::UsTransport.Checking.Droid.Resource.Layout.zxingscannerfragmentlayout;
-			global::ZXing.Net.Mobile.Forms.Android.Resource.String.library_name = global::UsTransport.Checking.Droid.Resource.String.library_name;
-			global::ZXing.Mobile.Resource.Id.contentFrame = global::UsTransport.Checking.Droid.Resource.Id.contentFrame;
-			global::ZXing.Mobile.Resource.Layout.zxingscanneractivitylayout = global::UsTransport.Checking.Droid.Resource.Layout.zxingscanneractivitylayout;
-			global::ZXing.Mobile.Resource.Layout.zxingscannerfragmentlayout = global::UsTransport.Checking.Droid.Resource.Layout.zxingscannerfragmentlayout;
-		}
-		
 		public partial class Animation
 		{
 			
@@ -2369,6 +2358,12 @@ namespace UsTransport.Checking.Droid
 			// aapt resource value: 0x7F09005B
 			public const int design_snackbar_background = 2131296347;
 			
+			// aapt resource value: 0x7F010002
+			public const int icon_scan = 2130771970;
+			
+			// aapt resource value: 0x7F010003
+			public const int icon_store = 2130771971;
+			
 			// aapt resource value: 0x7F090054
 			public const int ic_audiotrack_dark = 2131296340;
 			
@@ -2900,11 +2895,11 @@ namespace UsTransport.Checking.Droid
 			// aapt resource value: 0x7F090104
 			public const int ic_vol_type_tv_light = 2131296516;
 			
-			// aapt resource value: 0x7F010002
-			public const int login_bg = 2130771970;
+			// aapt resource value: 0x7F010004
+			public const int login_bg = 2130771972;
 			
-			// aapt resource value: 0x7F010003
-			public const int logo = 2130771971;
+			// aapt resource value: 0x7F010005
+			public const int logo = 2130771973;
 			
 			// aapt resource value: 0x7F090105
 			public const int mr_button_connected_dark = 2131296517;
@@ -3005,14 +3000,17 @@ namespace UsTransport.Checking.Droid
 			// aapt resource value: 0x7F09000C
 			public const int notify_panel_notification_icon_bg = 2131296268;
 			
+			// aapt resource value: 0x7F010006
+			public const int splash_drawable = 2130771974;
+			
 			// aapt resource value: 0x7F090069
 			public const int tooltip_frame_dark = 2131296361;
 			
 			// aapt resource value: 0x7F09006A
 			public const int tooltip_frame_light = 2131296362;
 			
-			// aapt resource value: 0x7F010004
-			public const int xamarin_logo = 2130771972;
+			// aapt resource value: 0x7F010007
+			public const int xamarin_logo = 2130771975;
 			
 			static Drawable()
 			{
@@ -5015,6 +5013,9 @@ namespace UsTransport.Checking.Droid
 			
 			// aapt resource value: 0x7F160121
 			public const int Theme_MediaRouter_Light_DarkControlPanel = 2132148513;
+			
+			// aapt resource value: 0x7F060005
+			public const int Theme_Splash = 2131099653;
 			
 			// aapt resource value: 0x7F16012C
 			public const int Widget_AppCompat_ActionBar = 2132148524;

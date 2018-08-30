@@ -118,7 +118,7 @@
                 </Grid>
 
                 <Button x:Name="BtnScan"
-                    Style="{DynamicResource PrimaryActionButtonStyle}"
+                    Style="{DynamicResource ScanActionButtonStyle}"
                     VerticalOptions="End"
                     Text="SCAN" Clicked="BtnScan_OnClicked"/>
             </StackLayout>

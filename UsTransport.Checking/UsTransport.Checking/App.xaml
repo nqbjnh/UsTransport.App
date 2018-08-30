@@ -5,7 +5,7 @@
 	<Application.Resources>
 		<ResourceDictionary>
             <!--Global Styles-->
-            <Color x:Key="NavigationPrimary">#2196F3</Color>
+            <Color x:Key="NavigationPrimary">#232F3E</Color>
             <Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
                 <Setter Property="BarTextColor" Value="White" />
@@ -100,7 +100,12 @@
                 <Setter Property="TextColor" Value="{StaticResource LabelButtonColor}"/>
                 <Setter Property="HeightRequest" Value="{StaticResource BaseButtonHeight}"/>
             </Style>
-            
+
+		    <Style x:Key="ScanActionButtonStyle" TargetType="Button" BasedOn="{StaticResource RoundedButtonStyle}">
+                <Setter Property="BackgroundColor" Value="#232F3E"/>
+		        <Setter Property="TextColor" Value="{StaticResource LabelButtonColor}"/>
+		        <Setter Property="HeightRequest" Value="{StaticResource BaseButtonHeight}"/>
+		    </Style>
         </ResourceDictionary>
 	</Application.Resources>
 </Application>

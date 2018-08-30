@@ -101,6 +101,9 @@ G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\bin\Debug\com.usexpress.ustransport.checking.apk
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\bin\Debug\com.usexpress.ustransport.checking-Signed.apk
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\obj\Debug\android\bin\com.usexpress.ustransport.checking.apk
+G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\obj\Debug\res\drawable\icon_store.png
+G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\obj\Debug\res\drawable\icon_scan.png
+G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\obj\Debug\res\drawable\splash_drawable.xml
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\bin\Debug\UsTransport.Checking.Android.dll
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\obj\Debug\linksrc\UsTransport.Checking.Android.dll.mdb
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\obj\Debug\linksrc\FormsViewGroup.dll.mdb

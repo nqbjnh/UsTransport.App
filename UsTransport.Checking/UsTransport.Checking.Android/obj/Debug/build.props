@@ -1,4 +1,4 @@
-BundleAssemblies=False
+BundleAssemblies=true
 AotAssemblies=False
 AndroidAotMode=
 ExplicitCrunch=False
@@ -16,7 +16,7 @@ XamarinAndroidVersion=8.3.3-2
 MonoSymbolArchive=False
 AndroidUseLatestPlatformSdk=false
 TargetFrameworkVersion=v8.1
-AndroidCreatePackagePerAbi=
+AndroidCreatePackagePerAbi=true
 OS=Windows_NT
 DesignTimeBuild=
 AndroidIncludeDebugSymbols=False

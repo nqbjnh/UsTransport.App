@@ -33,10 +33,10 @@ namespace UsTransport.Checking.Views
             {
                 MenuItems = new ObservableCollection<MainPageMenuItem>(new[]
                 {
-                    new MainPageMenuItem { Id = 0, Title = "Danh sách đại lý",TargetType = typeof(StorePage)},
-                    new MainPageMenuItem { Id = 1, Title = "Scan nhận hàng",TargetType = typeof(ScanPage) },
-                    new MainPageMenuItem { Id = 2, Title = "Scan kho hàng" ,TargetType = typeof(ScanPage)},
-                    new MainPageMenuItem { Id = 3, Title = "Scan Việt Nam" ,TargetType = typeof(ScanPage)}
+                    new MainPageMenuItem { Id = 0, Title = "Danh sách đại lý",TargetType = typeof(StorePage),Icon = "icon_store.png"},
+                    new MainPageMenuItem { Id = 1, Title = "Scan nhận hàng",TargetType = typeof(ScanPage),Icon = "icon_scan.png" },
+                    new MainPageMenuItem { Id = 2, Title = "Scan kho hàng" ,TargetType = typeof(ScanPage),Icon = "icon_scan.png"},
+                    new MainPageMenuItem { Id = 3, Title = "Scan Việt Nam" ,TargetType = typeof(ScanPage),Icon = "icon_scan.png"}
                 });
             }
             
