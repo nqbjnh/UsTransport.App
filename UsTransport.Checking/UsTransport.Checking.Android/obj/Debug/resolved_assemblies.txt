@@ -2,6 +2,12 @@ G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\obj\Debug\android\assets\FastAndroidCamera.dll
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\obj\Debug\android\assets\FormsViewGroup.dll
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\obj\Debug\android\assets\Java.Interop.dll
+G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\obj\Debug\android\assets\Microsoft.AppCenter.Analytics.Android.Bindings.dll
+G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\obj\Debug\android\assets\Microsoft.AppCenter.Analytics.dll
+G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\obj\Debug\android\assets\Microsoft.AppCenter.Android.Bindings.dll
+G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\obj\Debug\android\assets\Microsoft.AppCenter.Crashes.Android.Bindings.dll
+G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\obj\Debug\android\assets\Microsoft.AppCenter.Crashes.dll
+G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\obj\Debug\android\assets\Microsoft.AppCenter.dll
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\obj\Debug\android\assets\Mono.Android.dll
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\obj\Debug\android\assets\mscorlib.dll
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\obj\Debug\android\assets\Newtonsoft.Json.dll

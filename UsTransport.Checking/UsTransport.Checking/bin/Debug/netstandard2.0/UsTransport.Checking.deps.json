@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "1bd18556f4bf453314d6556d49589186e7712ca6"
+    "signature": "94b5fb440c8e904713c075e9053a96699346ec03"
   },
   "compilationOptions": {},
   "targets": {
@@ -9,6 +9,8 @@
     ".NETStandard,Version=v2.0/": {
       "UsTransport.Checking/1.0.0": {
         "dependencies": {
+          "Microsoft.AppCenter.Analytics": "1.9.0",
+          "Microsoft.AppCenter.Crashes": "1.9.0",
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "11.0.2",
           "System.Net.Http": "4.3.3",
@@ -17,6 +19,27 @@
         },
         "runtime": {
           "UsTransport.Checking.dll": {}
+        }
+      },
+      "Microsoft.AppCenter/1.9.0": {
+        "runtime": {
+          "lib/netstandard1.0/Microsoft.AppCenter.dll": {}
+        }
+      },
+      "Microsoft.AppCenter.Analytics/1.9.0": {
+        "dependencies": {
+          "Microsoft.AppCenter": "1.9.0"
+        },
+        "runtime": {
+          "lib/netstandard1.0/Microsoft.AppCenter.Analytics.dll": {}
+        }
+      },
+      "Microsoft.AppCenter.Crashes/1.9.0": {
+        "dependencies": {
+          "Microsoft.AppCenter": "1.9.0"
+        },
+        "runtime": {
+          "lib/netstandard1.0/Microsoft.AppCenter.Crashes.dll": {}
         }
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
@@ -475,6 +498,27 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Microsoft.AppCenter/1.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jUCmustijWMUCKlY2kzMUuPqcoVxCSJBR2FpjUQsR7kUTdrPvoKgfPeSr/b6eF5g3nLRbl6GRW7StnnY7yMh+Q==",
+      "path": "microsoft.appcenter/1.9.0",
+      "hashPath": "microsoft.appcenter.1.9.0.nupkg.sha512"
+    },
+    "Microsoft.AppCenter.Analytics/1.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bHXciKGX6WOZlxomjB/gfC+M191TFMN07mjzEUjBj1agNJ3wG8d8fOC7WZKBRbWN8APZ7OyNfZaKCPFGzyPcJw==",
+      "path": "microsoft.appcenter.analytics/1.9.0",
+      "hashPath": "microsoft.appcenter.analytics.1.9.0.nupkg.sha512"
+    },
+    "Microsoft.AppCenter.Crashes/1.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TE1huyfrNaMOXjr+zAtX5hZ5TQVsWlCKyjIeNkLXT5TBRW54TpmEXEAOw6oOvqP61qDDT5RKUNeptSAd7qSQxQ==",
+      "path": "microsoft.appcenter.crashes/1.9.0",
+      "hashPath": "microsoft.appcenter.crashes.1.9.0.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",

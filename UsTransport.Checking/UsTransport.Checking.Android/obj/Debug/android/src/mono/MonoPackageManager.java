@@ -109,6 +109,12 @@ class MonoPackageManager_Resources {
 		"UsTransport.Checking.Android.dll",
 		"FastAndroidCamera.dll",
 		"FormsViewGroup.dll",
+		"Microsoft.AppCenter.Analytics.Android.Bindings.dll",
+		"Microsoft.AppCenter.Analytics.dll",
+		"Microsoft.AppCenter.Android.Bindings.dll",
+		"Microsoft.AppCenter.Crashes.Android.Bindings.dll",
+		"Microsoft.AppCenter.Crashes.dll",
+		"Microsoft.AppCenter.dll",
 		"Newtonsoft.Json.dll",
 		"UsTransport.Checking.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
@@ -142,5 +148,5 @@ class MonoPackageManager_Resources {
 	};
 	public static final String[] Dependencies = new String[]{
 	};
-	public static final String ApiPackageName = null;
+	public static final String ApiPackageName = "Mono.Android.Platform.ApiLevel_27";
 }

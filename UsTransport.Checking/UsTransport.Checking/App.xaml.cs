@@ -4,6 +4,12 @@ using UsTransport.Checking.Services;
 using Xamarin.Forms;
 using UsTransport.Checking.Views;
 using Xamarin.Forms.Xaml;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+using UsTransport.Checking.Models;
+using UsTransport.Checking.Utils;
+using Device = Xamarin.Forms.Device;
 
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace UsTransport.Checking
@@ -11,23 +17,33 @@ namespace UsTransport.Checking
 	public partial class App : Application
 	{
 	    public static AppConfig APPCONFIG;
+	    public static string TOKEN;
+	    public static User USER;
+
         public App ()
 		{
 			InitializeComponent();
 
 
-			MainPage = new MainPage();
+			MainPage = new Login();
 		}
+
+
 
 		protected override async void OnStart ()
 		{
+		    AppCenter.Start("android=8cdf0827-a552-4ecb-88f7-c35c58a58dc9;",typeof(Analytics), typeof(Crashes));
+
             // Handle when your app starts
-		    var ihelper = DependencyService.Get<IHelper>();
+            var ihelper = DependencyService.Get<IHelper>();
             var config = new Config();
 		    APPCONFIG = config.GetAppConfig();
 		    var appVersion = ihelper.AppVersion;
 		    bool hasUpdate = false;
             string urlUpdateApp;
+            var userService = new UserService();
+		    //TOKEN = userService.GetToken( APPCONFIG.UserApi, APPCONFIG.PassApi);
+
             if (Device.RuntimePlatform == Device.iOS)
 		    {
 		        urlUpdateApp = APPCONFIG.StoreIos;

@@ -105,6 +105,7 @@ G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\obj\Debug\res\drawable\icon_scan.png
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\obj\Debug\res\drawable\splash_drawable.xml
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\bin\Debug\UsTransport.Checking.Android.dll
+G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\obj\Debug\linksrc\UsTransport.Checking.pdb
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\obj\Debug\linksrc\UsTransport.Checking.Android.dll.mdb
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\obj\Debug\linksrc\FormsViewGroup.dll.mdb
 G:\Projects\UsExpress\UsTransport.App\UsTransport.Checking\UsTransport.Checking.Android\obj\Debug\linksrc\Xamarin.Forms.Platform.Android.dll.mdb

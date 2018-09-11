@@ -36,12 +36,11 @@ namespace UsTransport.Checking.ViewModels
             try
             {
                 return  _IStoreService.GetOrderByCodeAsync(OrderCode).Result;
-
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex);
-                throw ex;
+                return new Response().System(ex.Message);
             }
         }
 
@@ -56,7 +55,7 @@ namespace UsTransport.Checking.ViewModels
             catch (Exception ex)
             {
                 Debug.WriteLine(ex);
-                throw ex;
+                return new Response().System(ex.Message);
             }
         }
     }

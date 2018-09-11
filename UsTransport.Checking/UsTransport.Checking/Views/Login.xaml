@@ -48,8 +48,8 @@
                         />
 
                         <!---EMAIL FIELD-->
-                        <Entry x:Name="LbUsername"
-                            Placeholder="Username" TextColor="White"
+                        <Entry x:Name="LbEmail"
+                            Placeholder="Email" TextColor="White"
                             Style="{DynamicResource ArtinaLoginEntryStyle}" />
 
                         <Label
@@ -82,7 +82,8 @@
                     <Button x:Name="BtnLogin"
                         Style="{DynamicResource PrimaryActionButtonStyle}"
                         VerticalOptions="End"
-                        Text="Login" />
+                        Text="Login" 
+                            Clicked="BtnLogin_OnClicked"/>
                 </StackLayout>
 
             </Grid>
