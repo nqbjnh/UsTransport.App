@@ -9,11 +9,28 @@ namespace UsTransport.Checking.Services
 {
     public class StoreService: IStoreService
     {
-        public Task<ObservableCollection<PackageViewDTO>> GetStoresAsync(PackageSearchFromApp packageSearchFromApp)
+        public Task<ObservableCollection<StoreWithPackageViewDTO>> GetStoresAsync(PackageSearchFromApp packageSearchFromApp)
         {
             try
             {
-                var response = Client.PostAsync<Response>(App.APPCONFIG.Api + "/api/app/store/getall", packageSearchFromApp.ToJson()).Result;
+                var response = Client.PostByTokenAsync<Response>(App.APPCONFIG.Api + "/api/app/store/getall", packageSearchFromApp.ToJson()).Result;
+                if (response.Code == 0)
+                {
+                    return Task.FromResult(response.Data.ToString().JsonToObject<ObservableCollection<StoreWithPackageViewDTO>>());
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Task<ObservableCollection<PackageViewDTO>> GetPackageAsync(PackageSearchFromApp packageSearchFromApp)
+        {
+            try
+            {
+                var response = Client.PostByTokenAsync<Response>(App.APPCONFIG.Api + "/api/app/store/getpackage", packageSearchFromApp.ToJson()).Result;
                 if (response.Code == 0)
                 {
                     return Task.FromResult(response.Data.ToString().JsonToObject<ObservableCollection<PackageViewDTO>>());
@@ -26,11 +43,11 @@ namespace UsTransport.Checking.Services
             }
         }
 
-        public Task<Response> GetOrderByCodeAsync(string OrderCode)
+        public Task<Response> GetPackageByCodeAsync(string OrderCode)
         {
             try
             {
-                return Task.FromResult(Client.PostAsync<Response>(App.APPCONFIG.Api + "/api/app/store/order/getbycode", new {Code = OrderCode}.ToJson()).Result);
+                return Task.FromResult(Client.PostByTokenAsync<Response>(App.APPCONFIG.Api + "/api/app/store/order/getbycode", new {Code = OrderCode}.ToJson()).Result);
                 
             }
             catch (Exception ex)
@@ -39,11 +56,11 @@ namespace UsTransport.Checking.Services
             }
         }
 
-        public Task<Response> UpdateOrderStatus(int PackageId,int CurrentStatus,int UpdateStatus)
+        public Task<Response> UpdatePackageStatus(int PackageId,int UpdateStatus)
         {
             try
             {
-                return Task.FromResult(Client.PostAsync<Response>(App.APPCONFIG.Api + "/api/app/store/order/updatestatus", new { PackageId = PackageId, CurrentStatus = CurrentStatus, UpdateStatus = UpdateStatus }.ToJson()).Result);
+                return Task.FromResult(Client.PostByTokenAsync<Response>(App.APPCONFIG.Api + "/api/app/store/order/updatestatus", new { PackageId = PackageId, UpdateStatus = UpdateStatus }.ToJson()).Result);
                 
             }
             catch (Exception ex)

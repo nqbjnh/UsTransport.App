@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:UsTransport.Checking.Controls;assembly=UsTransport.Checking"
+             x:Class="UsTransport.Checking.Views.PackagePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <controls:InfiniteListView x:Name="PackageListView" 
+                  ItemsSource="{Binding Packages}"
+                  VerticalOptions="FillAndExpand"
+                  HasUnevenRows="true"
+                  RefreshCommand="{Binding LoadPackagesCommand}"
+                  IsPullToRefreshEnabled="true"
+                  IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                  LoadMoreCommand="{Binding ItemAppearingCommand}"
+                    ItemTapped="PackageListView_OnItemTapped"
+                  >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Code}" 
+                                           LineBreakMode="NoWrap" 
+                                           Style="{DynamicResource ListItemTextStyle}" 
+                                           FontSize="16" />
+                                    <Label Text="{Binding StatusName}" BackgroundColor="{Binding StatusNameColor}" FontSize="16" TextColor="White"></Label>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding TotalItems,StringFormat='Total items: {0}'}" FontSize="12" ></Label>
+                                </StackLayout>
+                            </StackLayout>
+                            
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </controls:InfiniteListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

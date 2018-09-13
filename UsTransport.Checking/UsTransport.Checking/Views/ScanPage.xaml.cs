@@ -56,71 +56,84 @@ namespace UsTransport.Checking.Views
 
         private void GetProductByCode(string Code)
         {
-            
-            //call api check code
-            var result = _scanPageViewModel.GetOrderByCode(Code);
-            if (result == null)
+            try
             {
-                LbError.Text = "Có lỗi xảy ra, vui lòng thử lại sau!";
-                LbError.IsVisible = true;
-                return;
-            }
+                //call api check code
+                var result = _scanPageViewModel.GetOrderByCode(Code);
+                if (result == null)
+                {
+                    LbError.Text = "Có lỗi xảy ra, vui lòng thử lại sau!";
+                    LbError.IsVisible = true;
+                    return;
+                }
 
-            if (result.Code == 0)
+                if (result.Code == 0)
+                {
+
+                    _order = result.Data.ToJson().JsonToObject<PackageViewDTO>();
+                    EtInputCode.Text = string.Empty;
+                    EtInputCode.Text = string.Empty;
+
+
+                    LbStoreName.Text = "Đại lý:" + _order.StoreName;
+                    LbOrderCode.Text = "Mã gói hàng:" + _order.Code;
+                    LbStatusName.Text = _order.StatusName;
+                    LbStatusName.BackgroundColor =
+                        Color.FromHex("#" + (_order.StatusName.GetHashCode() & 0x00FFFFFF).ToString("X6"));
+                    LbTotalItem.Text = "Tổng số item:" + _order.TotalItems;
+                    LvItems.ItemsSource = _order.Items;
+
+                    SlInfo.IsVisible = true;
+                    GroupButton.IsVisible = true;
+                }
+                else
+                {
+                    LbError.Text = result.Message + ": " + result.Data;
+                    LbError.IsVisible = true;
+                }
+            }
+            catch (Exception e)
             {
-                
-                _order = result.Data.ToJson().JsonToObject<PackageViewDTO>();
-                EtInputCode.Text = string.Empty;
-                EtInputCode.Text = string.Empty;
-
-
-                LbStoreName.Text = "Đại lý:"+_order.StoreName;
-                LbOrderCode.Text = "Mã gói hàng:" + _order.Code;
-                LbStatusName.Text = _order.StatusName;
-                LbStatusName.BackgroundColor =
-                    Color.FromHex("#" + (_order.StatusName.GetHashCode() & 0x00FFFFFF).ToString("X6"));
-                LbTotalItem.Text = "Tổng số item:" + _order.TotalItems;
-                LvItems.ItemsSource = _order.Items;
-
-                SlInfo.IsVisible = true;
-                GroupButton.IsVisible = true;
+                Console.WriteLine(e);
             }
-            else
-            {
-                LbError.Text = result.Message + ": " + result.Data;
-                LbError.IsVisible = true;
-            }
+           
 
 
         }
 
         private async void BtnScan_OnClicked(object sender, EventArgs e)
         {
-            ClearControl();
-            //check nếu nhập code bằng camera
-            if (string.IsNullOrEmpty(EtInputCode.Text))
+            try
             {
-                scanPage = new ZXingScannerPage();
-                scanPage.OnScanResult += (result) =>
+                ClearControl();
+                //check nếu nhập code bằng camera
+                if (string.IsNullOrEmpty(EtInputCode.Text))
                 {
-                    scanPage.IsScanning = false;
-
-                    Device.BeginInvokeOnMainThread(() =>
+                    scanPage = new ZXingScannerPage();
+                    scanPage.OnScanResult += (result) =>
                     {
-                        Navigation.PopAsync();
-                        EtInputCode.Text = "Code: " + result.Text;
-                        GetProductByCode(result.Text);
+                        scanPage.IsScanning = false;
 
-                    });
-                };
+                        Device.BeginInvokeOnMainThread(() =>
+                        {
+                            Navigation.PopAsync();
+                            EtInputCode.Text = "Code: " + result.Text;
+                            GetProductByCode(result.Text);
 
-                await Navigation.PushAsync(scanPage);
+                        });
+                    };
+
+                    await Navigation.PushAsync(scanPage);
+                }
+                else//check nếu nhập code bằng tay
+                {
+                    GetProductByCode(EtInputCode.Text);
+                }
             }
-            else//check nếu nhập code bằng tay
+            catch (Exception ex)
             {
-                GetProductByCode(EtInputCode.Text);
+                Console.WriteLine(ex);
             }
-
 
         }
 
@@ -132,7 +145,7 @@ namespace UsTransport.Checking.Views
             var btn = (Button)sender;
             var orderStatus = int.Parse(btn.ClassId);
             
-            var result = _scanPageViewModel.UpdateOrderStatus((int)_order.Id,_order.StatusId, orderStatus);
+            var result = _scanPageViewModel.UpdateOrderStatus((int)_order.Id, orderStatus);
             if (result == null)
             {
                 LbError.Text = "Có lỗi xảy ra, vui lòng thử lại sau!";

@@ -19,7 +19,7 @@ namespace UsTransport.Checking.Views
         public StorePage()
         {
             InitializeComponent();
-            BindingContext = _storePageViewModel = new StorePageViewModel();
+            BindingContext = _storePageViewModel = new StorePageViewModel(Navigation);
 
         }
 
@@ -71,6 +71,18 @@ namespace UsTransport.Checking.Views
             {
                 
             }
+        }
+
+        /*private void StoresListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var storeItem = e.SelectedItem as StoreWithPackageViewDTO;
+            _storePageViewModel.SearchStatusCommand.Execute(storeItem.AllPackageSearch);
+        }*/
+
+        private void StoresListView_OnItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var storeItem = e.Item as StoreWithPackageViewDTO;
+            _storePageViewModel.SearchStatusCommand.Execute(storeItem.AllPackageSearch);
         }
     }
 }

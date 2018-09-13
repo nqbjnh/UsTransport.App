@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UsTransport.Checking.Views.ItemPage">
+    <ContentPage.Content>
+        <StackLayout x:Name="SlInfo" Margin="10">
+            <Label Text="{Binding PackageDetail.StoreName,StringFormat='Store: {0}'}"  TextColor="Blue" FontSize="14"/>
+            
+            <StackLayout Orientation="Horizontal">
+                <Label Text="{Binding PackageDetail.Code,StringFormat='Package Code: {0}'}" FontSize="14"/>
+                <Label Text="{Binding PackageDetail.StatusName}" BackgroundColor="{Binding PackageDetail.StatusNameColor}" TextColor="White" FontSize="14"/>
+            </StackLayout>
+
+            <Label  Text="Danh sách item" TextColor="Blue"/>
+            <ListView x:Name="LvItems" ItemsSource="{Binding PackageDetail.Items}" HasUnevenRows="True" Margin="10,0,0,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding CategoryName}" 
+                                           LineBreakMode="NoWrap" 
+                                           Style="{DynamicResource ListItemTextStyle}" 
+                                           FontSize="16" />
+                                <StackLayout Orientation="Horizontal">
+
+                                    <Label Text="{Binding Quantity,StringFormat='Quantity: {0}'}" 
+                                               LineBreakMode="NoWrap"
+                                               Style="{DynamicResource ListItemDetailTextStyle}"
+                                               FontSize="13" />
+                                    <Label Text="{Binding Value,StringFormat='Value: {0}'}" 
+                                               LineBreakMode="NoWrap"
+                                               Style="{DynamicResource ListItemDetailTextStyle}"
+                                               FontSize="13" />
+
+                                </StackLayout>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

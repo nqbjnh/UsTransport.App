@@ -3,7 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:UsTransport.Checking.Controls;assembly=UsTransport.Checking"
              x:Class="UsTransport.Checking.Views.StorePage" 
-             Title="Danh sách đại lý">
+             Title="Danh sách đại lý"
+             x:Name="ParentView">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="RoundedButtonStatus" TargetType="Button">
+                <Setter Property="FontSize" Value="11" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BorderRadius" Value="15" />
+                <Setter Property="HeightRequest" Value="33"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
         <StackLayout>
             <!--<ListView x:Name="ItemsListView" 
@@ -32,7 +46,7 @@
                 </ListView.ItemTemplate>
             </ListView>-->
             <StackLayout  Orientation="Horizontal" HorizontalOptions="Fill" VerticalOptions="Center" BackgroundColor="#e6e6e6" Padding="5,0,0,0">
-                <SearchBar Placeholder="Nhập tên đại lý..." HorizontalOptions="StartAndExpand" SearchButtonPressed="SearchBar_OnSearchButtonPressed"></SearchBar>
+                <SearchBar Placeholder="Tìm theo tên đại lý..." HorizontalOptions="StartAndExpand" SearchButtonPressed="SearchBar_OnSearchButtonPressed"></SearchBar>
             </StackLayout>
 
             <controls:InfiniteListView x:Name="StoresListView" 
@@ -43,6 +57,7 @@
                   IsPullToRefreshEnabled="true"
                   IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                   LoadMoreCommand="{Binding ItemAppearingCommand}"
+                                       ItemTapped="StoresListView_OnItemTapped"
                   >
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -53,20 +68,21 @@
                                    Style="{DynamicResource ListItemTextStyle}" 
                                    FontSize="16" />
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="Package code: " 
-                                           LineBreakMode="NoWrap"
-                                           Style="{DynamicResource ListItemDetailTextStyle}"
-                                           FontSize="13" />
-                                    <Label Text="{Binding Code}" 
-                                           LineBreakMode="NoWrap"
-                                           Style="{DynamicResource ListItemDetailTextStyle}"
-                                           FontSize="13" />
-                                    <Label Text="{Binding StatusName}" 
-                                           LineBreakMode="NoWrap"
-                                           Style="{DynamicResource ListItemDetailTextStyle}"
-                                           TextColor="White"
-                                           BackgroundColor="{Binding StatusNameColor}"
-                                           FontSize="13" ></Label>
+                                    <Button Text="{Binding TotalPackageNew,StringFormat='New: {0}'}" 
+                                            IsVisible="{Binding TotalPackageNew,Converter={StaticResource ButtonVisibleConverter}}" 
+                                            Command="{Binding BindingContext.SearchStatusCommand, Source={x:Reference ParentView}}"
+                                            CommandParameter="{Binding NewPackageSearch}"
+                                            Style="{StaticResource RoundedButtonStatus}" BackgroundColor="{Binding StatusNewColor}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    <Button Text="{Binding TotalPackagePickedUp,StringFormat='Pickup: {0}'}" 
+                                            IsVisible="{Binding TotalPackagePickedUp,Converter={StaticResource ButtonVisibleConverter}}" 
+                                            Command="{Binding BindingContext.SearchStatusCommand, Source={x:Reference ParentView}}"
+                                            CommandParameter="{Binding PickupPackageSearch}"
+                                            Style="{StaticResource RoundedButtonStatus}" BackgroundColor="{Binding StatusPickedUpColor}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    <Button Text="{Binding TotalPakkageSendToVn,StringFormat='SendToVn: {0}'}"
+                                            IsVisible="{Binding TotalPakkageSendToVn,Converter={StaticResource ButtonVisibleConverter}}" 
+                                            Command="{Binding BindingContext.SearchStatusCommand, Source={x:Reference ParentView}}"
+                                            CommandParameter="{Binding SendToVnPackageSearch}"
+                                            Style="{StaticResource RoundedButtonStatus}" BackgroundColor="{Binding StatusSendToVnColor}" HorizontalOptions="Start" VerticalOptions="Center"/>
                                 </StackLayout>
 
                             </StackLayout>

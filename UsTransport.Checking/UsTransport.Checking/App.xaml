@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:UsTransport.Checking.Converters"
              x:Class="UsTransport.Checking.App">
 	<Application.Resources>
 		<ResourceDictionary>
@@ -106,6 +107,9 @@
 		        <Setter Property="TextColor" Value="{StaticResource LabelButtonColor}"/>
 		        <Setter Property="HeightRequest" Value="{StaticResource BaseButtonHeight}"/>
 		    </Style>
+
+
+            <converters:ButtonVisibleConverter x:Key="ButtonVisibleConverter" />
         </ResourceDictionary>
 	</Application.Resources>
 </Application>

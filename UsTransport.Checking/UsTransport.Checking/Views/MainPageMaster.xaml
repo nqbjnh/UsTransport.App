@@ -22,10 +22,10 @@
                         <RowDefinition Height="10"/>
                     </Grid.RowDefinitions>
                     <Image Grid.Column="1" Grid.Row="1" Source="logo.png" />
-                    <Label
+                    <Label x:Name="lbEmail"
               Grid.Column="1"
               Grid.Row="2"
-              Text=""
+              TextColor="White"
               Style="{DynamicResource SubtitleStyle}" HorizontalTextAlignment="Center"/>
                 </Grid>
             </ListView.Header>
@@ -43,5 +43,10 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="End" >
+            <Label x:Name="lbEnv" VerticalOptions="End" HorizontalOptions="Center"></Label>
+            <Label x:Name="lbVersion" VerticalOptions="End" HorizontalOptions="Center"></Label>
+        </StackLayout>
+        
     </StackLayout>
 </ContentPage>

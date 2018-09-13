@@ -19,6 +19,7 @@ namespace ScanCode.Models
         public string TokenDev { get; set; }
         public string UserApi { get; set; }
         public string PassApi { get; set; }
+        public string CurrentEnv { get; set; }
 
         public Dictionary<int,string> DicEnviroment { get; set; }
 
@@ -49,6 +50,7 @@ namespace ScanCode.Models
 
         public string GetApiByEnv(int indexEnv)
         {
+            CurrentEnv = DicEnviroment[indexEnv];
             if (indexEnv == 0) // thật
             {
                 UserApi = Token.Split('/').First();
@@ -67,6 +69,7 @@ namespace ScanCode.Models
                 PassApi = TokenDev.Split('/').Last();
                 return ApiDev;
             }
+            
             return Api;
         }
     }

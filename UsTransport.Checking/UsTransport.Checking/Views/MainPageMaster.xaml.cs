@@ -23,6 +23,9 @@ namespace UsTransport.Checking.Views
 
             BindingContext = new MainPageMasterViewModel();
             ListView = MenuItemsListView;
+            lbEmail.Text = App.USER.Email;
+            lbEnv.Text = App.APPCONFIG.CurrentEnv;
+            lbVersion.Text = App.APP_VERSION;
         }
 
     }

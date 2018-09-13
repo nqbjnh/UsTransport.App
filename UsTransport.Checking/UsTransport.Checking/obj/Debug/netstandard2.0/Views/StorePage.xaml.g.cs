@@ -17,11 +17,15 @@ namespace UsTransport.Checking.Views {
     public partial class StorePage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.ContentPage ParentView;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::UsTransport.Checking.Controls.InfiniteListView StoresListView;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(StorePage));
+            ParentView = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ContentPage>(this, "ParentView");
             StoresListView = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::UsTransport.Checking.Controls.InfiniteListView>(this, "StoresListView");
         }
     }

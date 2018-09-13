@@ -7,9 +7,10 @@ namespace UsTransport.Checking.Services
 {
     public interface IStoreService
     {
-        Task<ObservableCollection<PackageViewDTO>> GetStoresAsync(PackageSearchFromApp packageSearchFromApp);
-        Task<Response> GetOrderByCodeAsync(string OrderCode);
-        Task<Response> UpdateOrderStatus(int PackageId, int CurrentStatus, int UpdateStatus);
+        Task<ObservableCollection<StoreWithPackageViewDTO>> GetStoresAsync(PackageSearchFromApp packageSearchFromApp);
+        Task<ObservableCollection<PackageViewDTO>> GetPackageAsync(PackageSearchFromApp packageSearchFromApp);
+        Task<Response> GetPackageByCodeAsync(string OrderCode);
+        Task<Response> UpdatePackageStatus(int PackageId, int UpdateStatus);
 
     }
 }

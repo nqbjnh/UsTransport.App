@@ -22,9 +22,10 @@ namespace UsTransport.Checking.Controls
         void InfiniteListView_ItemAppearing(object sender, ItemVisibilityEventArgs e)
         {
             var items = ItemsSource as IList;
-
-            if (items != null && e.Item == items[items.Count - 1])
+            var listSize = 20;
+            if (items != null && items.Count >= listSize && e.Item == items[items.Count - 1])
             {
+                
                 if (LoadMoreCommand != null && LoadMoreCommand.CanExecute(null))
                     LoadMoreCommand.Execute(null);
             }

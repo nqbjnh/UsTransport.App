@@ -33,7 +33,7 @@ namespace UsTransport.Checking.Models
         public string StoreName { get; set; }
         public List<ItemPackageViewDTO> Items { get; set; }
 
-        public string StatusNameColor { get; set; }
+        public string StatusNameColor => "#" + (StatusName.GetHashCode() & 0x00FFFFFF).ToString("X6");
 
     }
 }

@@ -35,7 +35,7 @@ namespace UsTransport.Checking.ViewModels
 
             try
             {
-                return  _IStoreService.GetOrderByCodeAsync(OrderCode).Result;
+                return  _IStoreService.GetPackageByCodeAsync(OrderCode).Result;
             }
             catch (Exception ex)
             {
@@ -44,12 +44,12 @@ namespace UsTransport.Checking.ViewModels
             }
         }
 
-        public Response UpdateOrderStatus(int PackageId, int CurrentStatus, int UpdateStatus)
+        public Response UpdateOrderStatus(int PackageId, int UpdateStatus)
         {
 
             try
             {
-                return _IStoreService.UpdateOrderStatus( PackageId,  CurrentStatus,  UpdateStatus).Result;
+                return _IStoreService.UpdatePackageStatus( PackageId,  UpdateStatus).Result;
 
             }
             catch (Exception ex)

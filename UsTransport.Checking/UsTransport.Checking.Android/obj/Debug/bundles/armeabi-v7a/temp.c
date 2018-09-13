@@ -22,71 +22,83 @@ typedef struct _compressed_data {
 } CompressedAssembly;
 
 extern const unsigned char assembly_data_UsTransport_Checking_Android_dll [];
-static CompressedAssembly assembly_bundle_UsTransport_Checking_Android_dll = {{"UsTransport.Checking.Android.dll", assembly_data_UsTransport_Checking_Android_dll, 104448}, 37755};
+static CompressedAssembly assembly_bundle_UsTransport_Checking_Android_dll = {{"UsTransport.Checking.Android.dll", assembly_data_UsTransport_Checking_Android_dll, 104448}, 37760};
 extern const unsigned char assembly_data_FastAndroidCamera_dll [];
-static CompressedAssembly assembly_bundle_FastAndroidCamera_dll = {{"FastAndroidCamera.dll", assembly_data_FastAndroidCamera_dll, 11264}, 4963};
+static CompressedAssembly assembly_bundle_FastAndroidCamera_dll = {{"FastAndroidCamera.dll", assembly_data_FastAndroidCamera_dll, 12800}, 5216};
 extern const unsigned char assembly_data_FormsViewGroup_dll [];
-static CompressedAssembly assembly_bundle_FormsViewGroup_dll = {{"FormsViewGroup.dll", assembly_data_FormsViewGroup_dll, 12800}, 4957};
+static CompressedAssembly assembly_bundle_FormsViewGroup_dll = {{"FormsViewGroup.dll", assembly_data_FormsViewGroup_dll, 22064}, 11783};
+extern const unsigned char assembly_data_Microsoft_AppCenter_Analytics_Android_Bindings_dll [];
+static CompressedAssembly assembly_bundle_Microsoft_AppCenter_Analytics_Android_Bindings_dll = {{"Microsoft.AppCenter.Analytics.Android.Bindings.dll", assembly_data_Microsoft_AppCenter_Analytics_Android_Bindings_dll, 90576}, 53216};
+extern const unsigned char assembly_data_Microsoft_AppCenter_Analytics_dll [];
+static CompressedAssembly assembly_bundle_Microsoft_AppCenter_Analytics_dll = {{"Microsoft.AppCenter.Analytics.dll", assembly_data_Microsoft_AppCenter_Analytics_dll, 16408}, 8692};
+extern const unsigned char assembly_data_Microsoft_AppCenter_Android_Bindings_dll [];
+static CompressedAssembly assembly_bundle_Microsoft_AppCenter_Android_Bindings_dll = {{"Microsoft.AppCenter.Android.Bindings.dll", assembly_data_Microsoft_AppCenter_Android_Bindings_dll, 462680}, 257686};
+extern const unsigned char assembly_data_Microsoft_AppCenter_Crashes_Android_Bindings_dll [];
+static CompressedAssembly assembly_bundle_Microsoft_AppCenter_Crashes_Android_Bindings_dll = {{"Microsoft.AppCenter.Crashes.Android.Bindings.dll", assembly_data_Microsoft_AppCenter_Crashes_Android_Bindings_dll, 167952}, 91056};
+extern const unsigned char assembly_data_Microsoft_AppCenter_Crashes_dll [];
+static CompressedAssembly assembly_bundle_Microsoft_AppCenter_Crashes_dll = {{"Microsoft.AppCenter.Crashes.dll", assembly_data_Microsoft_AppCenter_Crashes_dll, 31064}, 15883};
+extern const unsigned char assembly_data_Microsoft_AppCenter_dll [];
+static CompressedAssembly assembly_bundle_Microsoft_AppCenter_dll = {{"Microsoft.AppCenter.dll", assembly_data_Microsoft_AppCenter_dll, 26456}, 13927};
 extern const unsigned char assembly_data_Newtonsoft_Json_dll [];
-static CompressedAssembly assembly_bundle_Newtonsoft_Json_dll = {{"Newtonsoft.Json.dll", assembly_data_Newtonsoft_Json_dll, 653312}, 245024};
+static CompressedAssembly assembly_bundle_Newtonsoft_Json_dll = {{"Newtonsoft.Json.dll", assembly_data_Newtonsoft_Json_dll, 656384}, 244676};
 extern const unsigned char assembly_data_UsTransport_Checking_dll [];
-static CompressedAssembly assembly_bundle_UsTransport_Checking_dll = {{"UsTransport.Checking.dll", assembly_data_UsTransport_Checking_dll, 110080}, 38857};
+static CompressedAssembly assembly_bundle_UsTransport_Checking_dll = {{"UsTransport.Checking.dll", assembly_data_UsTransport_Checking_dll, 135680}, 47229};
 extern const unsigned char assembly_data_Xamarin_Android_Arch_Core_Common_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Android_Arch_Core_Common_dll = {{"Xamarin.Android.Arch.Core.Common.dll", assembly_data_Xamarin_Android_Arch_Core_Common_dll, 17920}, 6135};
+static CompressedAssembly assembly_bundle_Xamarin_Android_Arch_Core_Common_dll = {{"Xamarin.Android.Arch.Core.Common.dll", assembly_data_Xamarin_Android_Arch_Core_Common_dll, 29184}, 16161};
 extern const unsigned char assembly_data_Xamarin_Android_Arch_Lifecycle_Common_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Android_Arch_Lifecycle_Common_dll = {{"Xamarin.Android.Arch.Lifecycle.Common.dll", assembly_data_Xamarin_Android_Arch_Lifecycle_Common_dll, 14336}, 5378};
+static CompressedAssembly assembly_bundle_Xamarin_Android_Arch_Lifecycle_Common_dll = {{"Xamarin.Android.Arch.Lifecycle.Common.dll", assembly_data_Xamarin_Android_Arch_Lifecycle_Common_dll, 54368}, 31523};
 extern const unsigned char assembly_data_Xamarin_Android_Arch_Lifecycle_Runtime_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Android_Arch_Lifecycle_Runtime_dll = {{"Xamarin.Android.Arch.Lifecycle.Runtime.dll", assembly_data_Xamarin_Android_Arch_Lifecycle_Runtime_dll, 5120}, 1953};
+static CompressedAssembly assembly_bundle_Xamarin_Android_Arch_Lifecycle_Runtime_dll = {{"Xamarin.Android.Arch.Lifecycle.Runtime.dll", assembly_data_Xamarin_Android_Arch_Lifecycle_Runtime_dll, 32352}, 19965};
 extern const unsigned char assembly_data_Xamarin_Android_Support_Animated_Vector_Drawable_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Android_Support_Animated_Vector_Drawable_dll = {{"Xamarin.Android.Support.Animated.Vector.Drawable.dll", assembly_data_Xamarin_Android_Support_Animated_Vector_Drawable_dll, 6144}, 2221};
+static CompressedAssembly assembly_bundle_Xamarin_Android_Support_Animated_Vector_Drawable_dll = {{"Xamarin.Android.Support.Animated.Vector.Drawable.dll", assembly_data_Xamarin_Android_Support_Animated_Vector_Drawable_dll, 78456}, 50878};
 extern const unsigned char assembly_data_Xamarin_Android_Support_Annotations_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Android_Support_Annotations_dll = {{"Xamarin.Android.Support.Annotations.dll", assembly_data_Xamarin_Android_Support_Annotations_dll, 5632}, 2139};
+static CompressedAssembly assembly_bundle_Xamarin_Android_Support_Annotations_dll = {{"Xamarin.Android.Support.Annotations.dll", assembly_data_Xamarin_Android_Support_Annotations_dll, 144984}, 51340};
 extern const unsigned char assembly_data_Xamarin_Android_Support_Compat_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Android_Support_Compat_dll = {{"Xamarin.Android.Support.Compat.dll", assembly_data_Xamarin_Android_Support_Compat_dll, 161792}, 41857};
+static CompressedAssembly assembly_bundle_Xamarin_Android_Support_Compat_dll = {{"Xamarin.Android.Support.Compat.dll", assembly_data_Xamarin_Android_Support_Compat_dll, 1766992}, 788042};
 extern const unsigned char assembly_data_Xamarin_Android_Support_Core_UI_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Android_Support_Core_UI_dll = {{"Xamarin.Android.Support.Core.UI.dll", assembly_data_Xamarin_Android_Support_Core_UI_dll, 119808}, 31608};
+static CompressedAssembly assembly_bundle_Xamarin_Android_Support_Core_UI_dll = {{"Xamarin.Android.Support.Core.UI.dll", assembly_data_Xamarin_Android_Support_Core_UI_dll, 594512}, 328045};
 extern const unsigned char assembly_data_Xamarin_Android_Support_Core_Utils_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Android_Support_Core_Utils_dll = {{"Xamarin.Android.Support.Core.Utils.dll", assembly_data_Xamarin_Android_Support_Core_Utils_dll, 36352}, 10947};
+static CompressedAssembly assembly_bundle_Xamarin_Android_Support_Core_Utils_dll = {{"Xamarin.Android.Support.Core.Utils.dll", assembly_data_Xamarin_Android_Support_Core_Utils_dll, 239704}, 139150};
 extern const unsigned char assembly_data_Xamarin_Android_Support_Design_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Android_Support_Design_dll = {{"Xamarin.Android.Support.Design.dll", assembly_data_Xamarin_Android_Support_Design_dll, 58368}, 15973};
+static CompressedAssembly assembly_bundle_Xamarin_Android_Support_Design_dll = {{"Xamarin.Android.Support.Design.dll", assembly_data_Xamarin_Android_Support_Design_dll, 798800}, 453699};
 extern const unsigned char assembly_data_Xamarin_Android_Support_Fragment_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Android_Support_Fragment_dll = {{"Xamarin.Android.Support.Fragment.dll", assembly_data_Xamarin_Android_Support_Fragment_dll, 168448}, 40872};
+static CompressedAssembly assembly_bundle_Xamarin_Android_Support_Fragment_dll = {{"Xamarin.Android.Support.Fragment.dll", assembly_data_Xamarin_Android_Support_Fragment_dll, 433752}, 235941};
 extern const unsigned char assembly_data_Xamarin_Android_Support_Media_Compat_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Android_Support_Media_Compat_dll = {{"Xamarin.Android.Support.Media.Compat.dll", assembly_data_Xamarin_Android_Support_Media_Compat_dll, 6656}, 2362};
+static CompressedAssembly assembly_bundle_Xamarin_Android_Support_Media_Compat_dll = {{"Xamarin.Android.Support.Media.Compat.dll", assembly_data_Xamarin_Android_Support_Media_Compat_dll, 753248}, 412619};
 extern const unsigned char assembly_data_Xamarin_Android_Support_Transition_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Android_Support_Transition_dll = {{"Xamarin.Android.Support.Transition.dll", assembly_data_Xamarin_Android_Support_Transition_dll, 10752}, 2747};
+static CompressedAssembly assembly_bundle_Xamarin_Android_Support_Transition_dll = {{"Xamarin.Android.Support.Transition.dll", assembly_data_Xamarin_Android_Support_Transition_dll, 333912}, 216232};
 extern const unsigned char assembly_data_Xamarin_Android_Support_v4_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Android_Support_v4_dll = {{"Xamarin.Android.Support.v4.dll", assembly_data_Xamarin_Android_Support_v4_dll, 8704}, 2947};
+static CompressedAssembly assembly_bundle_Xamarin_Android_Support_v4_dll = {{"Xamarin.Android.Support.v4.dll", assembly_data_Xamarin_Android_Support_v4_dll, 41544}, 16936};
 extern const unsigned char assembly_data_Xamarin_Android_Support_v7_AppCompat_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Android_Support_v7_AppCompat_dll = {{"Xamarin.Android.Support.v7.AppCompat.dll", assembly_data_Xamarin_Android_Support_v7_AppCompat_dll, 367104}, 88793};
+static CompressedAssembly assembly_bundle_Xamarin_Android_Support_v7_AppCompat_dll = {{"Xamarin.Android.Support.v7.AppCompat.dll", assembly_data_Xamarin_Android_Support_v7_AppCompat_dll, 2114144}, 1160522};
 extern const unsigned char assembly_data_Xamarin_Android_Support_v7_CardView_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Android_Support_v7_CardView_dll = {{"Xamarin.Android.Support.v7.CardView.dll", assembly_data_Xamarin_Android_Support_v7_CardView_dll, 18944}, 6283};
+static CompressedAssembly assembly_bundle_Xamarin_Android_Support_v7_CardView_dll = {{"Xamarin.Android.Support.v7.CardView.dll", assembly_data_Xamarin_Android_Support_v7_CardView_dll, 62552}, 37679};
 extern const unsigned char assembly_data_Xamarin_Android_Support_v7_MediaRouter_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Android_Support_v7_MediaRouter_dll = {{"Xamarin.Android.Support.v7.MediaRouter.dll", assembly_data_Xamarin_Android_Support_v7_MediaRouter_dll, 5632}, 2029};
+static CompressedAssembly assembly_bundle_Xamarin_Android_Support_v7_MediaRouter_dll = {{"Xamarin.Android.Support.v7.MediaRouter.dll", assembly_data_Xamarin_Android_Support_v7_MediaRouter_dll, 794208}, 465097};
 extern const unsigned char assembly_data_Xamarin_Android_Support_v7_Palette_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Android_Support_v7_Palette_dll = {{"Xamarin.Android.Support.v7.Palette.dll", assembly_data_Xamarin_Android_Support_v7_Palette_dll, 5120}, 1967};
+static CompressedAssembly assembly_bundle_Xamarin_Android_Support_v7_Palette_dll = {{"Xamarin.Android.Support.v7.Palette.dll", assembly_data_Xamarin_Android_Support_v7_Palette_dll, 69208}, 40121};
 extern const unsigned char assembly_data_Xamarin_Android_Support_v7_RecyclerView_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Android_Support_v7_RecyclerView_dll = {{"Xamarin.Android.Support.v7.RecyclerView.dll", assembly_data_Xamarin_Android_Support_v7_RecyclerView_dll, 6144}, 2271};
+static CompressedAssembly assembly_bundle_Xamarin_Android_Support_v7_RecyclerView_dll = {{"Xamarin.Android.Support.v7.RecyclerView.dll", assembly_data_Xamarin_Android_Support_v7_RecyclerView_dll, 912992}, 471486};
 extern const unsigned char assembly_data_Xamarin_Android_Support_Vector_Drawable_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Android_Support_Vector_Drawable_dll = {{"Xamarin.Android.Support.Vector.Drawable.dll", assembly_data_Xamarin_Android_Support_Vector_Drawable_dll, 5120}, 1977};
+static CompressedAssembly assembly_bundle_Xamarin_Android_Support_Vector_Drawable_dll = {{"Xamarin.Android.Support.Vector.Drawable.dll", assembly_data_Xamarin_Android_Support_Vector_Drawable_dll, 63584}, 44818};
 extern const unsigned char assembly_data_Xamarin_Forms_Core_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Forms_Core_dll = {{"Xamarin.Forms.Core.dll", assembly_data_Xamarin_Forms_Core_dll, 666624}, 257955};
+static CompressedAssembly assembly_bundle_Xamarin_Forms_Core_dll = {{"Xamarin.Forms.Core.dll", assembly_data_Xamarin_Forms_Core_dll, 673336}, 262489};
 extern const unsigned char assembly_data_Xamarin_Forms_Platform_Android_dll [];
 static CompressedAssembly assembly_bundle_Xamarin_Forms_Platform_Android_dll = {{"Xamarin.Forms.Platform.Android.dll", assembly_data_Xamarin_Forms_Platform_Android_dll, 331344}, 143478};
 extern const unsigned char assembly_data_Xamarin_Forms_Platform_dll [];
 static CompressedAssembly assembly_bundle_Xamarin_Forms_Platform_dll = {{"Xamarin.Forms.Platform.dll", assembly_data_Xamarin_Forms_Platform_dll, 16960}, 7028};
 extern const unsigned char assembly_data_Xamarin_Forms_Xaml_dll [];
-static CompressedAssembly assembly_bundle_Xamarin_Forms_Xaml_dll = {{"Xamarin.Forms.Xaml.dll", assembly_data_Xamarin_Forms_Xaml_dll, 77824}, 33770};
+static CompressedAssembly assembly_bundle_Xamarin_Forms_Xaml_dll = {{"Xamarin.Forms.Xaml.dll", assembly_data_Xamarin_Forms_Xaml_dll, 85560}, 38868};
 extern const unsigned char assembly_data_ZXing_Net_Mobile_Core_dll [];
-static CompressedAssembly assembly_bundle_ZXing_Net_Mobile_Core_dll = {{"ZXing.Net.Mobile.Core.dll", assembly_data_ZXing_Net_Mobile_Core_dll, 12800}, 5226};
+static CompressedAssembly assembly_bundle_ZXing_Net_Mobile_Core_dll = {{"ZXing.Net.Mobile.Core.dll", assembly_data_ZXing_Net_Mobile_Core_dll, 13312}, 5349};
 extern const unsigned char assembly_data_ZXing_Net_Mobile_Forms_Android_dll [];
-static CompressedAssembly assembly_bundle_ZXing_Net_Mobile_Forms_Android_dll = {{"ZXing.Net.Mobile.Forms.Android.dll", assembly_data_ZXing_Net_Mobile_Forms_Android_dll, 9728}, 4511};
+static CompressedAssembly assembly_bundle_ZXing_Net_Mobile_Forms_Android_dll = {{"ZXing.Net.Mobile.Forms.Android.dll", assembly_data_ZXing_Net_Mobile_Forms_Android_dll, 11264}, 4987};
 extern const unsigned char assembly_data_ZXing_Net_Mobile_Forms_dll [];
-static CompressedAssembly assembly_bundle_ZXing_Net_Mobile_Forms_dll = {{"ZXing.Net.Mobile.Forms.dll", assembly_data_ZXing_Net_Mobile_Forms_dll, 15360}, 5992};
+static CompressedAssembly assembly_bundle_ZXing_Net_Mobile_Forms_dll = {{"ZXing.Net.Mobile.Forms.dll", assembly_data_ZXing_Net_Mobile_Forms_dll, 15872}, 6112};
 extern const unsigned char assembly_data_zxing_portable_dll [];
-static CompressedAssembly assembly_bundle_zxing_portable_dll = {{"zxing.portable.dll", assembly_data_zxing_portable_dll, 444416}, 203654};
+static CompressedAssembly assembly_bundle_zxing_portable_dll = {{"zxing.portable.dll", assembly_data_zxing_portable_dll, 445440}, 203861};
 extern const unsigned char assembly_data_ZXingNetMobile_dll [];
-static CompressedAssembly assembly_bundle_ZXingNetMobile_dll = {{"ZXingNetMobile.dll", assembly_data_ZXingNetMobile_dll, 40960}, 19656};
+static CompressedAssembly assembly_bundle_ZXingNetMobile_dll = {{"ZXingNetMobile.dll", assembly_data_ZXingNetMobile_dll, 43008}, 20473};
 extern const unsigned char assembly_data_Java_Interop_dll [];
 static CompressedAssembly assembly_bundle_Java_Interop_dll = {{"Java.Interop.dll", assembly_data_Java_Interop_dll, 192224}, 66854};
 extern const unsigned char assembly_data_Mono_Android_dll [];
@@ -182,6 +194,12 @@ static const CompressedAssembly *compressed [] = {
 	&assembly_bundle_UsTransport_Checking_Android_dll,
 	&assembly_bundle_FastAndroidCamera_dll,
 	&assembly_bundle_FormsViewGroup_dll,
+	&assembly_bundle_Microsoft_AppCenter_Analytics_Android_Bindings_dll,
+	&assembly_bundle_Microsoft_AppCenter_Analytics_dll,
+	&assembly_bundle_Microsoft_AppCenter_Android_Bindings_dll,
+	&assembly_bundle_Microsoft_AppCenter_Crashes_Android_Bindings_dll,
+	&assembly_bundle_Microsoft_AppCenter_Crashes_dll,
+	&assembly_bundle_Microsoft_AppCenter_dll,
 	&assembly_bundle_Newtonsoft_Json_dll,
 	&assembly_bundle_UsTransport_Checking_dll,
 	&assembly_bundle_Xamarin_Android_Arch_Core_Common_dll,

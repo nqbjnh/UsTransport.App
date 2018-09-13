@@ -20,7 +20,7 @@ namespace UsTransport.Checking.Views
 		    pickerEnv.Items.Add("Môi trường thật");
 		    pickerEnv.Items.Add("Môi trường test");
 		    pickerEnv.SelectedIndex = 0;
-        }
+		}
 
 	    private void BtnLogin_OnClicked(object sender, EventArgs e)
 	    {
@@ -41,20 +41,20 @@ namespace UsTransport.Checking.Views
                 return;
             }
 
-            try
-            {
-                var userService = new UserService();
-                //check môi trường
-                var indexEnv = pickerEnv.SelectedIndex;
-                var api = App.APPCONFIG.GetApiByEnv(indexEnv);
-                App.TOKEN = userService.GetToken(App.APPCONFIG.UserApi, App.APPCONFIG.PassApi);
-                var result = userService.Login(email, password);
-                
-                if (result.Code == 0)
-                {
-                    App.USER = result.Data.ToString().JsonToObject<User>();
-                    //save local database
-                    /* App.User = new User()
+	        try
+	        {
+	            var userService = new UserService();
+	            //check môi trường
+	            var indexEnv = pickerEnv.SelectedIndex;
+	            var api = App.APPCONFIG.GetApiByEnv(indexEnv);
+	            App.TOKEN = userService.GetToken(App.APPCONFIG.UserApi, App.APPCONFIG.PassApi);
+	            var result = userService.Login(email, password);
+
+	            if (result.Code == 0)
+	            {
+	                App.USER = result.Data.ToString().JsonToObject<User>();
+	                //save local database
+	                /* App.User = new User()
                      {
                          Email = LbEmail.Text,
                          Password = LbPassword.Text,
@@ -71,25 +71,25 @@ namespace UsTransport.Checking.Views
                          }
                      }*/
 
-                    /* Application.Current.MainPage = new NavigationPage(new ScanView())
+	                /* Application.Current.MainPage = new NavigationPage(new ScanView())
                      {
                          BarBackgroundColor = (Color)Application.Current.Resources["BarColor"],
                      };*/
-                    Application.Current.MainPage = new NavigationPage(new MainPage());
-                }
-                else
-                {
-                    LbError.IsVisible = true;
-                    LbError.Text = result.Data.ToString();
-                    return;
-                }
-            }
-            catch (Exception ex)
-            {
-                LbError.IsVisible = true;
-                LbError.Text = "Lỗi hệ thống:"+ ex.Message;
-                return;
-            }
+	                Application.Current.MainPage = new MainPage();
+	            }
+	            else
+	            {
+	                LbError.IsVisible = true;
+	                LbError.Text = result.Data.ToString();
+	                return;
+	            }
+	        }
+	        catch (Exception ex)
+	        {
+	            LbError.IsVisible = true;
+	            LbError.Text = "Lỗi hệ thống:" + ex.Message;
+	            return;
+	        }
         }
 	}
 }

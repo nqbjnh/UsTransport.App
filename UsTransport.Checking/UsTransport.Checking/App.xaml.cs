@@ -18,6 +18,7 @@ namespace UsTransport.Checking
 	{
 	    public static AppConfig APPCONFIG;
 	    public static string TOKEN;
+	    public static string APP_VERSION;
 	    public static User USER;
 
         public App ()
@@ -38,7 +39,7 @@ namespace UsTransport.Checking
             var ihelper = DependencyService.Get<IHelper>();
             var config = new Config();
 		    APPCONFIG = config.GetAppConfig();
-		    var appVersion = ihelper.AppVersion;
+		    APP_VERSION = ihelper.AppVersion;
 		    bool hasUpdate = false;
             string urlUpdateApp;
             var userService = new UserService();
@@ -47,12 +48,12 @@ namespace UsTransport.Checking
             if (Device.RuntimePlatform == Device.iOS)
 		    {
 		        urlUpdateApp = APPCONFIG.StoreIos;
-		        hasUpdate = !appVersion.Equals(APPCONFIG.IosVersion);
+		        hasUpdate = !APP_VERSION.Equals(APPCONFIG.IosVersion);
 		    }
 		    else
 		    {
 		        urlUpdateApp = APPCONFIG.StoreAndroid;
-		        hasUpdate = !appVersion.Equals(APPCONFIG.AndroidVersion);
+		        hasUpdate = !APP_VERSION.Equals(APPCONFIG.AndroidVersion);
 		    }
 
 		    if (hasUpdate)

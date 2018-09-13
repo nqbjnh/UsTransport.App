@@ -10,6 +10,7 @@ namespace UsTransport.Checking.Models
             FromDate = DateTime.Now.AddMonths(-3);
             ToDate = DateTime.Now;
             PageSize = 20;
+            WarehouseId = 0;
         }
         public string StoreName { get; set; }
         /// <summary>
@@ -33,6 +34,14 @@ namespace UsTransport.Checking.Models
         /// Total record
         /// </summary>
         public int Total { get; set; }
+
+       
+        /// <summary>
+        /// -1: seach all
+        /// </summary>
+        public int WarehouseId { get; set; }
+        public long UserId { get; set; }
+        public int StoreId { get; set; }
 
     }
 }
