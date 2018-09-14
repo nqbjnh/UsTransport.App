@@ -5,7 +5,7 @@
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.FLASHLIGHT" />
   <uses-permission android:name="android.permission.CAMERA" />
-  <application android:label="UsTransport.Checking.Android" android:name="android.support.multidex.MultiDexApplication" android:allowBackup="true" android:icon="@mipmap/icon">
+  <application android:label="Ghh Checking" android:name="android.support.multidex.MultiDexApplication" android:allowBackup="true" android:icon="@mipmap/icon">
     <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:theme="@style/MainTheme" android:name="md53738e2df8333f755c7cc95410d408474.MainActivity" />
     <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:noHistory="true" android:theme="@style/Theme.Splash" android:name="md53738e2df8333f755c7cc95410d408474.SplashScreen">
       <intent-filter>

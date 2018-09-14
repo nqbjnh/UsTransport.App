@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using ScanCode.Models;
 using UsTransport.Checking.Services;
 using Xamarin.Forms;
@@ -7,6 +8,7 @@ using Xamarin.Forms.Xaml;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
+using Microsoft.EntityFrameworkCore;
 using UsTransport.Checking.Models;
 using UsTransport.Checking.Utils;
 using Device = Xamarin.Forms.Device;
@@ -20,13 +22,11 @@ namespace UsTransport.Checking
 	    public static string TOKEN;
 	    public static string APP_VERSION;
 	    public static User USER;
-
+	    public static IEFService IEFSERVICE;
         public App ()
 		{
 			InitializeComponent();
-
-
-			MainPage = new Login();
+			//MainPage = new Login();
 		}
 
 
@@ -36,6 +36,7 @@ namespace UsTransport.Checking
 		    AppCenter.Start("android=8cdf0827-a552-4ecb-88f7-c35c58a58dc9;",typeof(Analytics), typeof(Crashes));
 
             // Handle when your app starts
+            IEFSERVICE = new EfService();
             var ihelper = DependencyService.Get<IHelper>();
             var config = new Config();
 		    APPCONFIG = config.GetAppConfig();
@@ -43,7 +44,19 @@ namespace UsTransport.Checking
 		    bool hasUpdate = false;
             string urlUpdateApp;
             var userService = new UserService();
-		    //TOKEN = userService.GetToken( APPCONFIG.UserApi, APPCONFIG.PassApi);
+            USER = IEFSERVICE.GetUser();
+            if (USER != null)
+            {
+                USER.RoleMenus = USER.Roles.Split(',').Select(int.Parse).ToList();
+                var api = APPCONFIG.GetApiByEnv(USER.Enviroment);
+		        TOKEN = userService.GetToken(APPCONFIG.UserApi, APPCONFIG.PassApi);
+
+                MainPage = new MainPage();
+            }
+		    else
+		    {
+		        MainPage = new Login();
+		    }
 
             if (Device.RuntimePlatform == Device.iOS)
 		    {

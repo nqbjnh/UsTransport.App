@@ -22,7 +22,7 @@ namespace UsTransport.Checking.Views
 		    pickerEnv.SelectedIndex = 0;
 		}
 
-	    private void BtnLogin_OnClicked(object sender, EventArgs e)
+	    private async void BtnLogin_OnClicked(object sender, EventArgs e)
 	    {
             LbError.IsVisible = false;
             var email = LbEmail.Text?.Trim();
@@ -54,28 +54,24 @@ namespace UsTransport.Checking.Views
 	            {
 	                App.USER = result.Data.ToString().JsonToObject<User>();
 	                //save local database
-	                /* App.User = new User()
-                     {
-                         Email = LbEmail.Text,
-                         Password = LbPassword.Text,
-                         Enviroment = indexEnv
-                     };
-                     await App.Database.SaveUserAsync(App.User);
+	                App.USER.Enviroment = indexEnv;
+	                App.USER.Roles = string.Join(",", App.USER.RoleMenus);
+                    await App.IEFSERVICE.SaveUserAsync(App.USER);
 
-                     App.ROLE_ORDER_STEPS = JsonConvert.DeserializeObject<List<RoleOrderStep>>(result.Data.ToString());
-                     if (App.ROLE_ORDER_STEPS.Any())
-                     {
-                         foreach (var roleOrderStep in App.ROLE_ORDER_STEPS)
-                         {
-                             await App.Database.SaveRoleOrderStepAsync(roleOrderStep);
-                         }
-                     }*/
+                    /*App.ROLE_ORDER_STEPS = JsonConvert.DeserializeObject<List<RoleOrderStep>>(result.Data.ToString());
+                    if (App.ROLE_ORDER_STEPS.Any())
+                    {
+                        foreach (var roleOrderStep in App.ROLE_ORDER_STEPS)
+                        {
+                            await App.Database.SaveRoleOrderStepAsync(roleOrderStep);
+                        }
+                    }*/
 
-	                /* Application.Current.MainPage = new NavigationPage(new ScanView())
+                    /* Application.Current.MainPage = new NavigationPage(new ScanView())
                      {
                          BarBackgroundColor = (Color)Application.Current.Resources["BarColor"],
                      };*/
-	                Application.Current.MainPage = new MainPage();
+                    Application.Current.MainPage = new MainPage();
 	            }
 	            else
 	            {

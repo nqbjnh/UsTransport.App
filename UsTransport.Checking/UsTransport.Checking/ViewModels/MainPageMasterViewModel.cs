@@ -33,6 +33,7 @@ namespace UsTransport.Checking.ViewModels
                 }
                 
             }
+            MenuItems.Add(new MainPageMenuItem { Id = 10, Title = "Đăng xuất", TargetType = typeof(ScanPage), Icon = "icon_exit.png" });
         }
 
     }

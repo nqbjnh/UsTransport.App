@@ -49,7 +49,7 @@
 
                         <!---EMAIL FIELD-->
                         <Entry x:Name="LbEmail"
-                            Placeholder="Email" TextColor="White" Text="anh@gmail.com"
+                            Placeholder="Email" TextColor="White"
                             Style="{DynamicResource ArtinaLoginEntryStyle}" />
 
                         <Label
@@ -64,7 +64,7 @@
                     <Entry 
                         Grid.Row="2"
                         x:Name="LbPassword"
-                        Placeholder="Password" Text="123456"
+                        Placeholder="Password" 
                         IsPassword="true" TextColor="White"
                         Style="{DynamicResource ArtinaLoginEntryStyle}" 
                         VerticalOptions="StartAndExpand" />
