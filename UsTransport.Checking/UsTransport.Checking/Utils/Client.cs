@@ -18,6 +18,7 @@ namespace UsTransport.Checking.Utils
     {
         #region Get
 
+        public static string _Api { get; set; }
         public static string _Token { get; set; }
 
         public static T Get<T>(string ApiUrl) where T : new()
@@ -129,7 +130,7 @@ namespace UsTransport.Checking.Utils
         {
             try
             {
-                if (!string.IsNullOrEmpty(_Token)) return _Token;
+                if (!string.IsNullOrEmpty(_Token) && _Api.Equals(ApiUrl)) return _Token;
                 using (var client = new HttpClient())
                 {
                     //setup client
@@ -154,6 +155,7 @@ namespace UsTransport.Checking.Utils
                     if (responseMessage.StatusCode == HttpStatusCode.OK)
                     {
                         _Token = jObject.GetValue("access_token").ToString();
+                        _Api = ApiUrl;
                         return _Token;
                     }
                     else

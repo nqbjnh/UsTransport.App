@@ -13,7 +13,7 @@ namespace UsTransport.Checking.Services
         {
             try
             {
-                var result = Client.Get<JObject>("http://apighh.usexpress.vn/appconfig.json");
+                var result = Client.Get<JObject>("http://apiweship.usexpress.vn/appconfig.json");
                 return new AppConfig(result);
             }
             catch (Exception ex)

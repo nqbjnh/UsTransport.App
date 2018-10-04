@@ -12,7 +12,8 @@ namespace ScanCode.Models
         public string StoreIos { get; set; }
         public string StoreAndroid { get; set; }
         public string Api { get; set; }
-        public string Token { get; set; }
+        public string ApiProd { get; set; }
+        public string TokenProd { get; set; }
         public string ApiTest { get; set; }
         public string TokenTest { get; set; }
         public string ApiDev { get; set; }
@@ -37,14 +38,14 @@ namespace ScanCode.Models
             AndroidVersion = appConfig.Value<string>("android");
             StoreIos = appConfig.Value<string>("storeIos");
             StoreAndroid = appConfig.Value<string>("storeAndroid");
-            Api = appConfig.Value<string>("api");
-            Token = appConfig.Value<string>("token");
+            ApiProd = appConfig.Value<string>("apiProd");
+            TokenProd = appConfig.Value<string>("tokenProd");
             ApiTest = appConfig.Value<string>("apiTest");
             TokenTest = appConfig.Value<string>("tokenTest");
             ApiDev = appConfig.Value<string>("apiDev");
             TokenDev = appConfig.Value<string>("tokenDev");
-            UserApi = Token.Split('/').First();
-            PassApi = Token.Split('/').Last();
+            UserApi = TokenProd.Split('/').First();
+            PassApi = TokenProd.Split('/').Last();
 
         }
 
@@ -53,9 +54,9 @@ namespace ScanCode.Models
             CurrentEnv = DicEnviroment[indexEnv];
             if (indexEnv == 0) // thật
             {
-                UserApi = Token.Split('/').First();
-                PassApi = Token.Split('/').Last();
-                return Api;
+                UserApi = TokenProd.Split('/').First();
+                PassApi = TokenProd.Split('/').Last();
+                return ApiProd;
             }
             if (indexEnv == 1) // test
             {
@@ -70,7 +71,7 @@ namespace ScanCode.Models
                 return ApiDev;
             }
             
-            return Api;
+            return ApiProd;
         }
     }
 }

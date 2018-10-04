@@ -41,12 +41,6 @@
                         Grid.Row="0"
                         VerticalOptions="StartAndExpand" >
 
-                        <Label x:Name="LbError"
-                            HorizontalOptions="Fill" FontSize="20" IsVisible="False"
-                            Text="Please enter a valid e-mail "
-                            Style="{DynamicResource ValidationEntryErrorStyle}"
-                        />
-
                         <!---EMAIL FIELD-->
                         <Entry x:Name="LbEmail"
                             Placeholder="Email" TextColor="White"

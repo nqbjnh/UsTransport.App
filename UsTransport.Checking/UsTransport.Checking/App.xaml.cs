@@ -48,7 +48,7 @@ namespace UsTransport.Checking
             if (USER != null)
             {
                 USER.RoleMenus = USER.Roles.Split(',').Select(int.Parse).ToList();
-                var api = APPCONFIG.GetApiByEnv(USER.Enviroment);
+                APPCONFIG.Api = APPCONFIG.GetApiByEnv(USER.Enviroment);
 		        TOKEN = userService.GetToken(APPCONFIG.UserApi, APPCONFIG.PassApi);
 
                 MainPage = new MainPage();

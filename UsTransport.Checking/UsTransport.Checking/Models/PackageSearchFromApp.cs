@@ -7,7 +7,7 @@ namespace UsTransport.Checking.Models
         public PackageSearchFromApp()
         {
             StatusId = -1;
-            FromDate = DateTime.Now.AddMonths(-3);
+            FromDate = DateTime.Now.AddMonths(-6);
             ToDate = DateTime.Now;
             PageSize = 20;
             WarehouseId = 0;

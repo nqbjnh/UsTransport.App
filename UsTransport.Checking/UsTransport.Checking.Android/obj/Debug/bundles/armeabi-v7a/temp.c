@@ -22,7 +22,7 @@ typedef struct _compressed_data {
 } CompressedAssembly;
 
 extern const unsigned char assembly_data_UsTransport_Checking_Android_dll [];
-static CompressedAssembly assembly_bundle_UsTransport_Checking_Android_dll = {{"UsTransport.Checking.Android.dll", assembly_data_UsTransport_Checking_Android_dll, 104448}, 37772};
+static CompressedAssembly assembly_bundle_UsTransport_Checking_Android_dll = {{"UsTransport.Checking.Android.dll", assembly_data_UsTransport_Checking_Android_dll, 104448}, 37768};
 extern const unsigned char assembly_data_FastAndroidCamera_dll [];
 static CompressedAssembly assembly_bundle_FastAndroidCamera_dll = {{"FastAndroidCamera.dll", assembly_data_FastAndroidCamera_dll, 11264}, 4963};
 extern const unsigned char assembly_data_FormsViewGroup_dll [];
@@ -98,7 +98,7 @@ static CompressedAssembly assembly_bundle_System_Memory_dll = {{"System.Memory.d
 extern const unsigned char assembly_data_System_Runtime_CompilerServices_Unsafe_dll [];
 static CompressedAssembly assembly_bundle_System_Runtime_CompilerServices_Unsafe_dll = {{"System.Runtime.CompilerServices.Unsafe.dll", assembly_data_System_Runtime_CompilerServices_Unsafe_dll, 5632}, 2200};
 extern const unsigned char assembly_data_UsTransport_Checking_dll [];
-static CompressedAssembly assembly_bundle_UsTransport_Checking_dll = {{"UsTransport.Checking.dll", assembly_data_UsTransport_Checking_dll, 118784}, 42445};
+static CompressedAssembly assembly_bundle_UsTransport_Checking_dll = {{"UsTransport.Checking.dll", assembly_data_UsTransport_Checking_dll, 119296}, 42960};
 extern const unsigned char assembly_data_Xamarin_Android_Arch_Core_Common_dll [];
 static CompressedAssembly assembly_bundle_Xamarin_Android_Arch_Core_Common_dll = {{"Xamarin.Android.Arch.Core.Common.dll", assembly_data_Xamarin_Android_Arch_Core_Common_dll, 17920}, 6135};
 extern const unsigned char assembly_data_Xamarin_Android_Arch_Lifecycle_Common_dll [];

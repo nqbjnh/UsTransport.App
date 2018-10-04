@@ -24,20 +24,18 @@ namespace UsTransport.Checking.Views
 
 	    private async void BtnLogin_OnClicked(object sender, EventArgs e)
 	    {
-            LbError.IsVisible = false;
+           
             var email = LbEmail.Text?.Trim();
             var password = LbPassword.Text?.Trim();
 
             if (string.IsNullOrEmpty(email))
             {
-                LbError.IsVisible = true;
-                LbError.Text = "Username không được để trống !";
+                await DisplayAlert("Thông báo", "Username không được để trống !", "OK");
                 return;
             }
             if (string.IsNullOrEmpty(password))
             {
-                LbError.IsVisible = true;
-                LbError.Text = "Password không được để trống !";
+                await DisplayAlert("Thông báo", "Password không được để trống !", "OK");
                 return;
             }
 
@@ -46,7 +44,7 @@ namespace UsTransport.Checking.Views
 	            var userService = new UserService();
 	            //check môi trường
 	            var indexEnv = pickerEnv.SelectedIndex;
-	            var api = App.APPCONFIG.GetApiByEnv(indexEnv);
+	            App.APPCONFIG.Api = App.APPCONFIG.GetApiByEnv(indexEnv);
 	            App.TOKEN = userService.GetToken(App.APPCONFIG.UserApi, App.APPCONFIG.PassApi);
 	            var result = userService.Login(email, password);
 
@@ -75,15 +73,13 @@ namespace UsTransport.Checking.Views
 	            }
 	            else
 	            {
-	                LbError.IsVisible = true;
-	                LbError.Text = result.Data.ToString();
+	                await DisplayAlert("Thông báo", result.Data.ToString(),"OK");
 	                return;
 	            }
 	        }
 	        catch (Exception ex)
 	        {
-	            LbError.IsVisible = true;
-	            LbError.Text = "Lỗi hệ thống:" + ex.Message;
+	            await DisplayAlert("Thông báo", "Lỗi hệ thống:" + ex.Message, "OK");
 	            return;
 	        }
         }

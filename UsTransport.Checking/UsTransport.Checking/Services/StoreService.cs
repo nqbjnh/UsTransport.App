@@ -60,7 +60,7 @@ namespace UsTransport.Checking.Services
         {
             try
             {
-                return Task.FromResult(Client.PostByTokenAsync<Response>(App.APPCONFIG.Api + "/api/app/store/order/updatestatus", new { PackageId = PackageId, UpdateStatus = UpdateStatus }.ToJson()).Result);
+                return Task.FromResult(Client.PostByTokenAsync<Response>(App.APPCONFIG.Api + "/api/app/store/order/updatestatus", new { PackageId = PackageId, UpdateStatus = UpdateStatus,AppTime = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") }.ToJson()).Result);
                 
             }
             catch (Exception ex)
